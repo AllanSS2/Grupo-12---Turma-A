@@ -30,13 +30,12 @@ public class PIJogoRPG {
 
             do{
 
-                Escreva("++========================++", TimeUnit.MILLISECONDS, temp_dialog);
+                Escreva("\n++========================++", TimeUnit.MILLISECONDS, temp_dialog);
                 Escreva("\n....: Math Adventure :.... \n1 - Jogar\n2 - Capítulos\n3 - Créditos\n4 - Sair\n", TimeUnit.MILLISECONDS, temp_dialog);
                 Escreva("++========================++\n", TimeUnit.MILLISECONDS, temp_dialog);
 
                 escolha_opcao = entrada.nextInt();
                 if(escolha_opcao == 1){
-
                     jogo();
 
                 }
@@ -48,11 +47,11 @@ public class PIJogoRPG {
                     creditos();
                 }
                 else if (escolha_opcao == 4){
-                    System.out.println("Não seja fraco, volte e conquiste o mundo!");
+                    Escreva("Não seja fraco, volte e conquiste o mundo!", TimeUnit.MILLISECONDS, temp_dialog);
                     break;
                 }
                 else{
-                    System.out.println("hm... essa opção não conheço, mas escolha alguma correspondente:");
+                    Escreva("hm... essa opção não conheço, mas escolha alguma correspondente:", TimeUnit.MILLISECONDS, temp_dialog);
                 }
 
             }while(escolha_opcao !=3 );
@@ -61,10 +60,20 @@ public class PIJogoRPG {
 
         static void jogo() throws Exception{
             Scanner entrada = new Scanner(System.in);
-            System.out.println("Olha só o que temos por aqui... \n");
-           
-            Escreva("Narrador: Um mundo de desafios te aguarda, esteja pronto!\n", TimeUnit.MILLISECONDS, temp_dialog);
-            Escreva("Narrador: Bem-vindo(a) ao mundo de Math Adventure, voce está preparado para essa grande jornada?\n",TimeUnit.MILLISECONDS, temp_dialog);
+            Escreva("Narrador: Espera... Quem é você? Não vou tentar adivinhar...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+            Escreva("Prefiro te chamar de Ace, um ótimo nome para um guerreiro como você!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+            Escreva("Narrador: Mas não se deixe enganar só pelo elogio... os desafios serão grandes! Vai precisar de culhão!\n\n",TimeUnit.MILLISECONDS, temp_dialog);
+            Escreva("Narrador: Não fique com medo, um guerreiro não desiste fácil!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+            Escreva("Se sente preparado?\n1 - Porque eu teria medo?\n2 - Pega leve\n", TimeUnit.MILLISECONDS, temp_dialog);
+            int escolha_opcao = entrada.nextInt();
+
+            switch(escolha_opcao){
+                case 1:
+                    break;
+                case 2:
+                    menu();
+                    break;
+            }
         }
 
         
