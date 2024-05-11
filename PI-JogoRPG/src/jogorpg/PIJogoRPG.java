@@ -15,6 +15,34 @@ public class PIJogoRPG {
      
     
         static int temp_dialog = 50, temp_narrativa = 50, temp_transicao = 50;
+
+
+
+        
+    
+        public static void Escreva(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
+            for (char caractere : mensagem.toCharArray()) {
+            System.out.print(caractere);
+            unit.sleep(tempo_mensagem);
+            }
+        }
+
+
+        static void jogo() throws Exception{
+            Scanner entrada = new Scanner(System.in);
+            System.out.println("Bem vindo ao game");
+        }
+
+        static void historia() throws Exception{
+            Scanner entrada = new Scanner(System.in);   
+        }
+
+        static void creditos()throws Exception{
+            
+        }
+
+
+
         public static void main(String[] args) throws Exception {
             jogo(); 
             Scanner entrada = new Scanner(System.in);
@@ -69,27 +97,6 @@ public class PIJogoRPG {
                 
         }
     
-        public static void Escreva(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
-            for (char caractere : mensagem.toCharArray()) {
-            System.out.print(caractere);
-            unit.sleep(tempo_mensagem);
-    }
-      
-        }
-        static void jogo() throws Exception{
-            Scanner entrada = new Scanner(System.in);
-            System.out.println("Bem vindo ao game");
-    
-        }
-        static void historia() throws Exception{
-            Scanner entrada = new Scanner(System.in);   
-    
-        }
-        static void creditos()throws Exception{
-    
-        }
-    
         
-    
     }
     
