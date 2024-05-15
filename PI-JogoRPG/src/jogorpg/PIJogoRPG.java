@@ -54,8 +54,11 @@ public class PIJogoRPG {
         Escreva("Devo chamá-lo de Ace? hmmm... Jovem Ace, um ótimo nome para um guerreiro como você!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Narrador: Mas não se deixe enganar só pelo elogio... os desafios serão grandes! você irá precisar de coragem!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Narrador: Não fique com medo, um guerreiro não desiste fácil!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        int escolha_opcao;
+
+        do{
         Escreva("Se sente preparado?\n1 - Medo? Eu? Jamais!\n2 - Não estou confiante, desisto!\n", TimeUnit.MILLISECONDS, temp_dialog);
-        int escolha_opcao = entrada.nextInt();
+        escolha_opcao = entrada.nextInt();
 
         switch (escolha_opcao) {
             case 1:
@@ -65,18 +68,22 @@ public class PIJogoRPG {
                 Escreva("\nNarrador: Atitude de um derrotado!\n", TimeUnit.MILLISECONDS, temp_dialog);
                 menu();
                 break;
+                default:
+                Escreva("\nNão conheço essa opção... Escolha outra!\n", TimeUnit.MILLISECONDS, temp_dialog);
+                break;
         }
+        }while(escolha_opcao != 1 && escolha_opcao != 2);
 
         Escreva("\nNarrador: Aqui se inicia sua jornada, desejo-lhe boa sorte!!!!\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("\nPai: Ei Ace, acorde seu preguiçoso!!!!\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("\nAce: argh... Deixe eu continuar descansando pai...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("\nPai: ACEEEEEE, por que você é tão preguiçoso???\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("\nPai: Na sua idade eu já desbravava o mundo!!!\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("\nVocê vai querer levantar?\n", TimeUnit.MILLISECONDS, temp_dialog);
         int escolha;
         int contador = 1;
 
-        do {
+        do{
+        Escreva("\nVocê vai querer levantar?\n", TimeUnit.MILLISECONDS, temp_dialog);
             Escreva("\n1- Sim | 2- Não\n", TimeUnit.MILLISECONDS, temp_dialog);
             escolha = entrada.nextInt();
 
@@ -91,19 +98,21 @@ public class PIJogoRPG {
                     Escreva("Apanhou " + contador++ + " vez (s)", TimeUnit.MILLISECONDS, temp_dialog);
                     if (contador > 2)
                         Escreva("\nPara! irei levantar... argh!", TimeUnit.MILLISECONDS, temp_dialog);
+                        default:
+                        Escreva("\nNão conheço essa opção... Escolha outra!\n", TimeUnit.MILLISECONDS, temp_dialog);
             }
-        } while (escolha == 2);
+        } while (escolha == 2 || escolha > 2);
 
         Escreva("\nNarrador: Ace levanta como se não tivesse acontecido nada..", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("\nNarrador: Depois de ter um grande bom dia de seus pais, tomar seu café da manhã, Ace foi ajudar seu pai em seu trabalho...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("\nPai: Ace, venha ajudar seu velho na forja, eu estou velho...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("\nPai: E também quero te contar uma grande história\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("\nVocê vai querer ouvir essa história misteriosa...?\n", TimeUnit.MILLISECONDS, temp_dialog);
         int escolha2;
         int escolha_forja;
 
-        do {
-            Escreva("\n1- Sim | 2- Não\n", TimeUnit.MILLISECONDS, temp_dialog);
+        do{
+        Escreva("\nVocê vai querer ouvir essa história misteriosa...?\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("\n1- Sim | 2- Não\n", TimeUnit.MILLISECONDS, temp_dialog);
             escolha2 = entrada.nextInt();
 
             switch (escolha2) {
@@ -115,24 +124,22 @@ public class PIJogoRPG {
                     Escreva("\nAce: Estou cansado e não estou muito interessado nessa história...\n", TimeUnit.MILLISECONDS, temp_dialog);
                     Escreva("\nPai: Cansado? Não faz nada e esta cansado...\n", TimeUnit.MILLISECONDS, temp_dialog);
                     Escreva("\nVocê já viu alguém trabalhando com forja antes?\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("\n1 - Claro! Você mexe com isso todo dia!\n2 - Não, parece sem graça...", TimeUnit.MILLISECONDS, temp_dialog);
+            escolha_forja = entrada.nextInt();
+
+            if (escolha_forja == 1) {
+                Escreva("\nPai: Todo conhecimento é válido! Então deixa eu te ensinar mais um pouco...\n", TimeUnit.MILLISECONDS, temp_dialog);
+
+            }else if (escolha_forja == 2){
+                Escreva("\nPai: Sem graça? venha comigo! Sem graça é ficar procrastinando!\n", TimeUnit.MILLISECONDS, temp_dialog);
+            
+            }else{
+                Escreva("\nNão conheço essa opção... Escolha outra!\n", null, escolha_forja);
+            }
                 default:
                     break;
             }
-            Escreva("\n1 - Claro! Você mexe com isso todo dia!\n2 - Não, parece sem graça...", TimeUnit.MILLISECONDS, temp_dialog);
-            escolha_forja = entrada.nextInt();
-
-            switch (escolha_forja){
-                case 1:
-                    Escreva("\nPai: Todo conhecimento é válido! Então deixa eu te ensinar mais um pouco...\n", TimeUnit.MILLISECONDS, temp_dialog);
-                    break;
-                case 2:
-                    Escreva("\nPai: Sem graça? venha comigo! Sem graça é ficar procrastinando!\n", TimeUnit.MILLISECONDS, temp_dialog);
-                    break;
-            }
-
-            Escreva("\nPai: Hoje o dia vai ser longo, e você vai me ajudar! Não aceito NÃO como resposta!\n", TimeUnit.MILLISECONDS, temp_dialog);
-            Escreva("\nPronto para ouvir a História?\n", TimeUnit.MILLISECONDS, temp_dialog);
-        } while (escolha_forja == 1 || escolha_forja == 2);
+        }while (escolha2 == 2 || escolha > 2);
     }
 
 
