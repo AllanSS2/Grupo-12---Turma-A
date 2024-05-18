@@ -1,4 +1,3 @@
-
 package jogorpg;
 
 
@@ -99,6 +98,7 @@ public class PIJogoRPG {
                     Escreva("Apanhou " + contador++ + " vez (s)", TimeUnit.MILLISECONDS, temp_dialog);
                     if (contador > 2)
                         Escreva("\nPara! irei levantar... argh!", TimeUnit.MILLISECONDS, temp_dialog);
+                        break;
                         default:
                         Escreva("\nNão conheço essa opção... Escolha outra!\n", TimeUnit.MILLISECONDS, temp_dialog);
             }
@@ -125,7 +125,7 @@ public class PIJogoRPG {
                     Escreva("\nAce: Estou cansado e não estou muito interessado nessa história...\n", TimeUnit.MILLISECONDS, temp_dialog);
                     Escreva("\nPai: Cansado? Não faz nada e esta cansado...\n", TimeUnit.MILLISECONDS, temp_dialog);
                     Escreva("\nVocê já viu alguém trabalhando com forja antes?\n", TimeUnit.MILLISECONDS, temp_dialog);
-                    Escreva("\n1 - Claro! Você mexe com isso todo dia!\n2 - Não, parece sem graça...", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("\n1 - Claro! Você mexe com isso todo dia! | 2 - Não, parece sem graça...", TimeUnit.MILLISECONDS, temp_dialog);
             escolha_forja = entrada.nextInt();
 
             if (escolha_forja == 1) {
@@ -143,25 +143,60 @@ public class PIJogoRPG {
         }while (escolha2 == 2 || escolha > 2);
 
         Escreva("\nPai: seu avô me contava uma história mitologica quando eu era pequeno...\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Há muito tempo, em um reino distante, existiam três pedras mágicas de fortalecimento", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Há muito tempo, em um reino distante, existiam três jóias mágicas de fortalecimento", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("\nDiziam as lendas que essas pedras eram presentes dos deuses, concedidas aos mortais como uma prova de sua confiança e habilidade para moldar o destino.", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("\nCada pedra fica protegida por um ancião, e para conquista-lá, é necessário derrotá-lo...Eu tinha medo e por isso nunca quis procurar saber mais dessa história...", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("\nVenha, vou te ensinar a forjar uma espada!", TimeUnit.MILLISECONDS, temp_dialog);
-
-        Escreva("\n1 - Mas é só isso a história? me conta mais sobre os detalhes!\n2 - Essa história parece mentira..", TimeUnit.MILLISECONDS, temp_dialog);
-        int escolha_historia = entrada.nextInt();
+        Escreva("\nVenha, vou te ensinar a forjar uma espada!\n", TimeUnit.MILLISECONDS, temp_dialog);
+        int escolha_historia;
 
         do{
+        Escreva("\n1 - Mas é só isso a história? me conta mais sobre os detalhes!\n2 - Essa história parece mentira..\n", TimeUnit.MILLISECONDS, temp_dialog);
+        escolha_historia = entrada.nextInt();
+
+        
             switch(escolha_historia){
                 case 1:
                 Escreva("\nPai: As pedras possuem cores, cada cor representa um nível de dificuldade...", TimeUnit.MILLISECONDS, temp_dialog);
                 Escreva("\nÉ impossível derrotar os anciões sem o devido conhecimento sobre eles...", TimeUnit.MILLISECONDS, temp_dialog);
                 break;
                 case 2:
-                Escreva("\n", TimeUnit.MILLISECONDS, temp_dialog);
+                Escreva("\nPai: Hahaha, Ace, Ace, até a mais maluca das histórias podem se tornar verdade, se você acreditar nela", TimeUnit.MILLISECONDS, temp_dialog);
+                Escreva("\nPai: E quem sabe... Você pode ser o primeiro à torna-lá real, vou te convencer !", TimeUnit.MILLISECONDS, temp_dialog);
+                Escreva("\nAce: Eu quero ver você tentar... \n", TimeUnit.MILLISECONDS, temp_dialog);
+                break;
+                
+                
             }
-        }while();
-    }
+        }while(escolha_historia != 1 && escolha_historia != 2);
+
+            Escreva("\nPai: Como eu havia dito antes, existem três jóias perdidas, e cada uma delas se encontram em lugares distintos", TimeUnit.MILLISECONDS, temp_dialog);
+            Escreva("\nPai: E cada uma delas há um ancião guardião, sua função é protegê-las de malfeitores", TimeUnit.MILLISECONDS, temp_dialog);
+            Escreva("\nPai: A primeira jóia regida por um fulgor azul, representando a sabedoria, e quem à possuísse irá adquirir um vasto conhecimento sobre o mundo ", TimeUnit.MILLISECONDS, temp_dialog);
+            Escreva("\nPai: Mas ela é guardada por um Ancião chamado, Ragnar, cuja a sabedoria está além dos limites humanos.", TimeUnit.MILLISECONDS, temp_dialog);
+            int escolha_opcao2;
+            do{
+            
+            Escreva("\nPai: Acha que consegue encarar?\n\n1- Claro, mas... | 2- Não...\n", TimeUnit.MILLISECONDS, temp_dialog);
+            
+            escolha_opcao2 = entrada.nextInt();
+            
+            
+            if(escolha_opcao2 == 1){
+                Escreva("\nAce: Se a sabedoria dele está além dos limites humanos, como conseguiremos derrotar-lo?", TimeUnit.MILLISECONDS, temp_dialog);
+
+            }else if(escolha_opcao2 == 2){
+                Escreva("\nAce: Eu estou realmente assustado que possa existir alguém assim!", TimeUnit.MILLISECONDS, temp_dialog);
+
+            }else{
+                Escreva("\nNão conheço essa opção... Escolha outra!", TimeUnit.MILLISECONDS, temp_dialog);
+            }
+
+    }while(escolha_opcao2 !=1 && escolha_opcao2 !=2);
+
+            Escreva("\nPai: São questões que só enfrentando-o para conseguir tais respostas\n", TimeUnit.MILLISECONDS, escolha_opcao2);
+            Escreva("\nPai: Isso é só o começo de uma jornada complicada e desafiadora!", TimeUnit.MILLISECONDS, temp_dialog);
+
+}
 
     static void creditos() throws Exception {
         Escreva("++== DESENVOLVEDORES ==++ \n\n++== Juan Batista ==++\n" +
