@@ -1,4 +1,4 @@
-package jogorpg;
+package Teste;
 import java.util.Scanner;
 
 public class EscolhaEspada {
