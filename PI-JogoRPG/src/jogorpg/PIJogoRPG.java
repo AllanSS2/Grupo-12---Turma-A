@@ -36,7 +36,9 @@ public class PIJogoRPG {
 
             if (escolha_opcao == 1) {
                 //jogo();
-                pontos = capitulo1();
+                pontos += capitulo1();
+                pontos += capitulo2();
+                pontos += capitulo3();
                 return pontos;
 
             } else if (escolha_opcao == 2) {
@@ -784,6 +786,35 @@ public class PIJogoRPG {
 
         pontos += potencia2();
 
+
+        return pontos;
+    }
+
+
+    public static int capitulo2(){
+        Scanner entrada = new Scanner(System.in);
+        int pontos = 0;
+
+        // mais historia
+        pontos += equação1grau();
+
+        // mais historia
+
+        pontos += equação2grau();
+        
+        return pontos;
+    }
+
+    public static int capitulo3(){
+        Scanner entrada = new Scanner(System.in);
+        int pontos = 0;
+
+        // mais historia
+        pontos += polinomios1();
+
+        // mais historia
+
+        pontos += polinomios2();
 
         return pontos;
     }
