@@ -11,7 +11,8 @@ import java.util.concurrent.TimeUnit;
 public class PIJogoRPG {
 
     //ajuste a velocidade dos caracteres impressos
-    static int temp_dialog = 60,  temp_narrativa = 0;
+    //static int temp_dialog = 60,  temp_narrativa = 0;
+    static int temp_dialog = 0,  temp_narrativa = 0;
 
     public static void Escreva(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
         for (char caractere : mensagem.toCharArray()) {
@@ -47,7 +48,7 @@ public class PIJogoRPG {
                 Escreva("hm... essa opção não conheço, mas escolha alguma correspondente:\n", TimeUnit.MILLISECONDS, temp_narrativa);
             }
 
-        } while (escolha_opcao != 1 && escolha_opcao != 2 && escolha_opcao != 3);
+        } while (escolha_opcao != 4);
     }
 
     //Perguntas do jogo
@@ -123,11 +124,14 @@ public class PIJogoRPG {
         }while(!acertou);
         if (tentativas <= 1) {
             pontos = 100;
+            System.out.println("Boa guereirro você acertou de primeira, você ganhou "+pontos+"!");
         }else if (tentativas > 1 && tentativas <=3) {
             pontos = 50;
         }else{
             pontos = 20;
         }
+
+        
         return pontos;
     }
 
@@ -536,6 +540,7 @@ public class PIJogoRPG {
     // Função do jogo 
     static void jogo() throws Exception {
         Scanner entrada = new Scanner(System.in);
+        System.out.println();
         Escreva("Viajante: Espera... Quem é você? Não, vou tentar adivinhar...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Devo chamá-lo de Ace? hmmm... Jovem Ace, um ótimo nome para um guerreiro como você!\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Mas não se deixe enganar só pelo elogio... os desafios serão grandes! você irá precisar de coragem!\n", TimeUnit.MILLISECONDS, temp_dialog);
@@ -743,12 +748,17 @@ public class PIJogoRPG {
         Escreva("1 - Correr como se não ouvesse o amanhã.\n2 - Enfrentar Ragnar.\n", TimeUnit.MILLISECONDS, temp_narrativa);
         escolha_medo = entrada.nextInt();
 
-        switch (escolha_medo){
+        if(escolha_medo > 0 && escolha_medo <= 2){
+            switch (escolha_medo){
             case 1:
                 Escreva("Ace Corre desesperadamente e novamente cai..PUFFF\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
                 break;
             case 2:
                 Escreva(" ", TimeUnit.MILLISECONDS, temp_narrativa);
+                break;
+            }
+        }else{
+            System.out.println("Entrada invalida, tente novamente!!");
         }
     }while(escolha_medo != 1 && escolha_medo != 2);
 
@@ -756,6 +766,8 @@ public class PIJogoRPG {
         Escreva("Viajante: Necessário usar o seu pouco conhecimento em matématica para concluir a missão!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Derrote Ragnar agora!!!!!!!!!\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Acertando os cáculos de primeira, sua pontuação será a mais alta.\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+        potencia1();
 
 
     }
@@ -788,7 +800,7 @@ public class PIJogoRPG {
         Escreva("\n\n++== Conclusão ==++\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("Encontre e reúna as Jóias perdidas do fortalecimento para restaurar a paz e a harmonia no reino. Sua sabedoria,\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("coragem e força serão testadas a cada passo da jornada.\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        menu();
+        
     }
 
     static void creditos() throws Exception {
@@ -832,7 +844,7 @@ public class PIJogoRPG {
 
 
     public static void main(String[] args) throws Exception {
-        capitulo1();
+        menu();
         /*String[] espadas = {"Espada Longa", "Espada Curta", "Espada Bastarda", "Katana", "Sabre"};
         int escolha = obterEscolhaUsuario(espadas);
         String espadaEscolhida = escolherEspada(espadas, escolha);
