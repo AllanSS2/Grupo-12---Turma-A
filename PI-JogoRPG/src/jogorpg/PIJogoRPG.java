@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class PIJogoRPG {
 
+
     //ajuste a velocidade dos caracteres impressos
     //static int temp_dialog = 60,  temp_narrativa = 0;
     static int temp_dialog = 0,  temp_narrativa = 0;
@@ -22,9 +23,10 @@ public class PIJogoRPG {
     }
 
     //Menu completo do jogo
-    static void menu() throws Exception {
+    static int menu() throws Exception {
         Scanner entrada = new Scanner(System.in);
         int escolha_opcao;
+        int pontos=0;
 
         do {
             Escreva("\n++========================++", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -33,7 +35,9 @@ public class PIJogoRPG {
             escolha_opcao = entrada.nextInt();
 
             if (escolha_opcao == 1) {
-                jogo();
+                //jogo();
+                pontos = capitulo1();
+                return pontos;
 
             } else if (escolha_opcao == 2) {
                 instrucoes();
@@ -49,6 +53,8 @@ public class PIJogoRPG {
             }
 
         } while (escolha_opcao != 4);
+
+        return pontos;
     }
 
     //Perguntas do jogo
@@ -540,6 +546,7 @@ public class PIJogoRPG {
     // Função do jogo 
     static void jogo() throws Exception {
         Scanner entrada = new Scanner(System.in);
+        
         System.out.println();
         Escreva("Viajante: Espera... Quem é você? Não, vou tentar adivinhar...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Devo chamá-lo de Ace? hmmm... Jovem Ace, um ótimo nome para um guerreiro como você!\n", TimeUnit.MILLISECONDS, temp_dialog);
@@ -713,8 +720,10 @@ public class PIJogoRPG {
 
     }
 
-    static void capitulo1() throws Exception{
+    static int capitulo1() throws Exception{
+        //Capitulo 1
         Scanner entrada = new Scanner(System.in);
+        int pontos=0;
 
         Escreva("++== A JÓIA DA SABEDORIA ==+\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("Ace vai em direção ao Norte, atrás da pedra da sabedoria...\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -767,10 +776,18 @@ public class PIJogoRPG {
         Escreva("Derrote Ragnar agora!!!!!!!!!\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Acertando os cáculos de primeira, sua pontuação será a mais alta.\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
 
-        potencia1();
+        pontos += potencia1();
+
+        Escreva("Boa Ace, você venceu sua primeira batalha!\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        //Mais um pouco de historia 
 
 
+        pontos += potencia2();
+
+
+        return pontos;
     }
+
 
     //Escreva("Viajante: Ace ", TimeUnit.MILLISECONDS, temp_dialog);
     static void instrucoes() throws Exception{
@@ -844,7 +861,9 @@ public class PIJogoRPG {
 
 
     public static void main(String[] args) throws Exception {
-        menu();
+        int pontosJogador;
+        pontosJogador = menu();
+        System.out.println("Pontos do jogador: "+pontosJogador);
         /*String[] espadas = {"Espada Longa", "Espada Curta", "Espada Bastarda", "Katana", "Sabre"};
         int escolha = obterEscolhaUsuario(espadas);
         String espadaEscolhida = escolherEspada(espadas, escolha);
