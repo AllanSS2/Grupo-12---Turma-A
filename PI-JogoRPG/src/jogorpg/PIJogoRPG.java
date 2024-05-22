@@ -1234,12 +1234,13 @@ public class PIJogoRPG {
         Escreva("Viajante: Sim, infelizmente...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Você vai precisar usar sua sabedoria para enfrentar tudo isso...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Vamos em busca da Jóia da Coragem para encorajá-lo concluir a jornada contra o tempo!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        int escolhaSeguir;
 
         do {
             Escreva("1 - Agora desânimei de seguir em frente...\n2 - Me conta mais sobre a história dessa jóia...\n", TimeUnit.MILLISECONDS, temp_narrativa);
-            escolha = entrada.nextInt();
+            escolhaSeguir = entrada.nextInt();
 
-            switch (escolha) {
+            switch (escolhaSeguir) {
                 case 1:
                     Escreva("Viajante: Lembra do que seu pai te disse?\n", TimeUnit.MILLISECONDS, temp_dialog);
                     Escreva("Viajante: Ele quer ser honrado por você...\n", TimeUnit.MILLISECONDS, temp_dialog);
@@ -1252,19 +1253,99 @@ public class PIJogoRPG {
                     Escreva(" ", TimeUnit.MILLISECONDS, temp_narrativa);
                     break;
             }
-        } while (escolha != 2);
+        } while (escolhaSeguir != 2);
 
         Escreva("Viajante: A jóia da coragem possuí um brilho amarelo e expele uma aura de valentia...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajane: Aquele que a possuir, encontrará coragem infinita\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Capaz de enfrentar os desafios mais temíveis sem recuar\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Viajante: Protegido por um ancião que acredita na justiça e no poder do heroísmo!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Protegido por um ancião chamado Orex, que acredita na justiça e no poder do heroísmo!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Ace: Grande história... Mas eu não tenho muito tempo...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Ace: Me diga para onde devo ir!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Esta jóia esta protegida no leste subterraneo\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Será necessário muito empenho para percorrer este percurso\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Ace: Utilizarei da minha sabedoria para chegar lá!!!\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Utilizarei da minha sabedoria para chegar lá!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***1° DIA DE 3***", null, escolhaSeguir);
+        int escolhaCaminho;
 
-        // mais historia
+        do {
+            Escreva("DESEJA IR POR QUAL CAMINHO?", TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("1 - Mais difícil.\n2 - Mais fácil.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolhaCaminho = entrada.nextInt();
+
+            switch (escolhaCaminho) {
+                case 1:
+                    Escreva("Viajante: Talvez essa não seja a melhor escolha...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Por que?\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Percorrer pelo caminho mais difícil fará você se desgastar mais,\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Estará muito mais cansado, sem contar que é mais longe...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: É... Você tem razão! Não tenho tempo para percorrer caminhos mais longos, necessito achar outro jeito!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    break;
+
+                case 2:
+                    Escreva("Ace: Preciso que me guie para encontrar o caminho mais rápido, meu tempo esta contado...\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    break;
+            }
+        } while (escolhaCaminho != 1 && escolhaCaminho != 2);
+
+        Escreva("Viajante: Conheço uma trilha considera perigosa...\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Mas é a alternativa mais rápida que você vai ter!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Não tenho outra escolha a não ser esta! Af...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE LEVOU MUITAS HORAS PARA CHEGAR PRÓXIMO AO DESTINO...\n\n***", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Mesmo pelo pior caminho, estou exausto, preciso descansar...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        int escolhaDescanso;
+
+        do {
+            Escreva("1 - Descansar.\n2 - Continuar mesmo assim.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolhaDescanso = entrada.nextInt();
+
+            switch (escolhaDescanso) {
+                case 1:
+                    Escreva("Viajante: Tem certeza que deseja descansar?\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: O tempo é curto, lembra do seu prósito aqui!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Você terá muito tempo para descansar quando terminar a jornada!\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    break;
+
+                case 2:
+                    Escreva("Ace: Utilizarei da minha sabedoria para seguir em frente, meu propósito é maior!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    break;
+            }
+        } while (escolhaDescanso != 1 && escolhaDescanso != 2);
+
+        Escreva("***ACE CHEGA NA ENTRADA DO SUBTERRANEO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: É escuro assim mesmo? Não sei se quero entrar...\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Mais sinto que não estou sendo sábio o suficiente para tomar decisões...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Coloque na sua cabeça apenas o propósito de tudo isso que esta acontecendo! Não irei repetir novamente!\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Pense positivo e tudo dará certo!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Vou entrar e terminar o que eu vim fazer!! Grr\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE ENTRA NO SUBTERRANEO E FICA SURPRESO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Como assim o ancião não está aqui protegendo-a\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Serei o mais rápido dessa vez, para não levantar muitas suspeitas...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE APÓS PEGAR A JÓIA DA CORAGEM...***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Viajante: Cuidado Ace, tem alguém na saída, me parece estranho\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+
+        do {
+            Escreva("1 - Se esconder.\n2 - Averiguar o que esta acontecendo.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolhaDescanso = entrada.nextInt();
+
+            switch (escolhaDescanso) {
+                case 1:
+                    Escreva("Viajante: Onde vai se esconder aqui?\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Acha mesmo que o Orex não conhece todos os cantos deste subterraneo?\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Mas minha sabedoria é maior que a dele, jamais me pegará aqui!! *Risos\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    break;
+
+                case 2:
+                    Escreva("Ace: Mesmo com medo, vou em frente, sinto que é a escolha mais sábia!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    break;
+            }
+        } while (escolhaCaminho != 1 && escolhaCaminho != 2);
+
+        Escreva("***ANTES DE ACE TENTAR FAZER ALGO, OREX ENTRA RÁPIDAMENTE E O PEGA***", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Viajante o que eu faço agora??? Me ajuda!!!!!", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Use sua sabedoria para lidar com este momento!!", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE PENSA NO QUE FAZER***", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Já sei!!!! utilizarei o ataque da equação!!", TimeUnit.MILLISECONDS, temp_dialog);
+
         pontos += equacao1grau();
 
         // mais historia
