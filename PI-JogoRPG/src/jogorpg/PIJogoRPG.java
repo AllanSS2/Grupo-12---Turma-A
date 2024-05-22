@@ -35,11 +35,10 @@ public class PIJogoRPG {
             escolha_opcao = entrada.nextInt();
 
             if (escolha_opcao == 1) {
-                //jogo();
-                 pontos += treino3();
-                // pontos += capitulo1();
-                // pontos += capitulo2();
-                // pontos += capitulo3();
+                jogo();
+                pontos += capitulo1();
+                pontos += capitulo2();
+                pontos += capitulo3();
                 return pontos;
 
             } else if (escolha_opcao == 2) {
