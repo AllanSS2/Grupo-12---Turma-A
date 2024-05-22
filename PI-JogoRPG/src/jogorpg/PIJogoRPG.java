@@ -36,9 +36,10 @@ public class PIJogoRPG {
 
             if (escolha_opcao == 1) {
                 //jogo();
-                pontos += capitulo1();
-                pontos += capitulo2();
-                pontos += capitulo3();
+                 pontos += treino3();
+                // pontos += capitulo1();
+                // pontos += capitulo2();
+                // pontos += capitulo3();
                 return pontos;
 
             } else if (escolha_opcao == 2) {
@@ -60,6 +61,100 @@ public class PIJogoRPG {
     }
 
     //Perguntas do jogo
+
+    public static int treino1() throws Exception{
+        Scanner entrada = new Scanner(System.in);
+        Escreva("Boa Ace, agora você vai aprender um pouco sobre potenciação para conseguir a sua primeira joia!\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+        Escreva("A potenciação é uma operação matemática. Utilizamos a potenciação para indicar multiplicações consecutivas de um mesmo fator. Por exemplo,\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("3^5 representa 5 multiplicações do número 3, o que resulta em 243. Dizemos que 3 é a base, 5 é o expoente e 243 é a potência.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+        Escreva("Principais propriedades da potenciação:\n x^m . x^n = x^m+n \n x^m / x^n = x^m-n \n (x^m)^n = x^m.n \n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+        Escreva("Agora teste o seu conhecimento com um exemplo:\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+        boolean acertou = false;
+        int tentativas = 0;
+        int pontos;
+
+        List alternativas = new ArrayList();
+        alternativas.add("77435");
+        alternativas.add("78125");//correta
+        alternativas.add("15625");
+        alternativas.add("390625");
+
+
+        do {
+            tentativas = tentativas + 1;
+            Collections.shuffle(alternativas);
+            System.out.println("Qual o resultado de 5^3 . 5^4?");
+            System.out.println("a) " + alternativas.get(0));
+            System.out.println("b) " + alternativas.get(1));
+            System.out.println("c) " + alternativas.get(2));
+            System.out.println("d) " + alternativas.get(3));
+
+            System.out.print("Escolha uma alternativa: ");
+            String resposta = entrada.next();
+
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (alternativas.get(0).equals("78125")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "b":
+                case "B":
+                    if (alternativas.get(1).equals("78125")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "c":
+                case "C":
+                    if (alternativas.get(2).equals("78125")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "d":
+                case "D":
+                    if (alternativas.get(3).equals("78125")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                default:
+                    System.out.println("Escolha inválida!");
+
+
+            }
+
+        } while (!acertou);
+        if (tentativas <= 1) {
+            pontos = 100;
+            System.out.println("Boa guereirro você acertou de primeira, você ganhou " + pontos + "!");
+        } else if (tentativas > 1 && tentativas <= 3) {
+            pontos = 50;
+        } else {
+            pontos = 20;
+        }
+        System.out.println("Parabéns, você concluiu o treino!!");
+
+        return pontos;
+
+    }
+
     public static int potencia1() {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
@@ -223,6 +318,191 @@ public class PIJogoRPG {
         return pontos;
     }
 
+
+    public static int treino2() throws Exception{
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Equações de 1 grau: ");
+        Escreva("As equações de primeiro grau são sentenças matemáticas que estabelecem relações de igualdade entre termos conhecidos e desconhecidos, representadas sob a forma: ax+b = 0\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("O objetivo de resolver uma equação de primeiro grau é descobrir o valor desconhecido, ou seja, encontrar o valor da incógnita que torna a igualdade verdadeira.\nPara isso, deve-se isolar os elementos desconhecidos em um dos lados do sinal de igual e os valores constantes do outro lado. Contudo, é importante observar que a mudança de posição desses elementos deve ser feita de forma que a igualdade continue sendo verdadeira. Quando um termo da equação mudar de lado do sinal de igual, devemos inverter a operação. Assim, se tiver multiplicando, passará dividindo, se tiver somando passará subtraindo e vice-versa.\n", TimeUnit.MILLISECONDS, temp_dialog);
+
+        Escreva("Agora teste o seu conhecimento com um exemplo:\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+        boolean acertou = false;
+        int tentativas = 0;
+        int pontos = 0;
+        int pontosTreino;
+
+        List alternativas = new ArrayList();
+        alternativas.add("2");
+        alternativas.add("1");//correta
+        alternativas.add("3");
+        alternativas.add("4");
+
+
+        do {
+            tentativas = tentativas + 1;
+            Collections.shuffle(alternativas);
+            System.out.println("Qual o valor da incógnita x que torna a igualdade 8x - 3 = 5 verdadeira?");
+            System.out.println("a) " + alternativas.get(0));
+            System.out.println("b) " + alternativas.get(1));
+            System.out.println("c) " + alternativas.get(2));
+            System.out.println("d) " + alternativas.get(3));
+
+            System.out.print("Escolha uma alternativa: ");
+            String resposta = entrada.next();
+
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (alternativas.get(0).equals("1")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "b":
+                case "B":
+                    if (alternativas.get(1).equals("1")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "c":
+                case "C":
+                    if (alternativas.get(2).equals("1")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "d":
+                case "D":
+                    if (alternativas.get(3).equals("1")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                default:
+                    System.out.println("Escolha inválida!");
+
+
+            }
+
+        } while (!acertou);
+        if (tentativas <= 1) {
+            pontosTreino = 100;
+            System.out.println("Boa guereirro você acertou de primeira, você ganhou " + pontosTreino + "!");
+        } else if (tentativas > 1 && tentativas <= 3) {
+            pontosTreino = 50;
+        } else {
+            pontosTreino = 20;
+        }
+
+
+        pontos += pontosTreino;
+
+        System.out.println();
+        System.out.println("Equações de 2 grau: ");
+        Escreva("A equação do segundo grau recebe esse nome porque é uma equação polinomial cujo termo de maior grau está elevado ao quadrado. Também chamada de equação quadrática, é representada por:\r\n" + //
+                        "\r\n" + //
+                        "ax² + bx + c = 0\r\n" + //
+                        "\r\n" + //
+                        "Numa equação do 2º grau, o x é a incógnita e representa um valor desconhecido. Já as letras a, b e c são chamadas coeficientes da equação.\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Resolver uma equação de segundo grau, significa determinar os valores reais de x, que tornam a equação verdadeira. Esses valores são denominados raízes da equação.\n", TimeUnit.MILLISECONDS, temp_dialog);
+
+        Escreva("Agora teste o seu conhecimento com um exemplo:\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+        int tentativas2 = 0;
+        int pontosTreino2 = 0;
+        boolean acertou2= false;
+
+        List alternativas2 = new ArrayList();
+        alternativas2.add("x = 10/4 e x = 2");
+        alternativas2.add("x = 5/2 e x = - 1");//correta
+        alternativas2.add("x = 20 e x = 4");
+        alternativas2.add("x = 15/3 e x = 1");
+
+
+        do {
+            tentativas2 = tentativas2 + 1;
+            Collections.shuffle(alternativas2);
+            System.out.println("Determine as raízes da equação 2x² - 3x - 5 = 0");
+            System.out.println("a) " + alternativas2.get(0));
+            System.out.println("b) " + alternativas2.get(1));
+            System.out.println("c) " + alternativas2.get(2));
+            System.out.println("d) " + alternativas2.get(3));
+
+            System.out.print("Escolha uma alternativa: ");
+            String resposta = entrada.next();
+
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (alternativas2.get(0).equals("x = 5/2 e x = - 1")) {
+                        System.out.println("Resposta correta!");
+                        acertou2 = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "b":
+                case "B":
+                    if (alternativas2.get(1).equals("x = 5/2 e x = - 1")) {
+                        System.out.println("Resposta correta!");
+                        acertou2 = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "c":
+                case "C":
+                    if (alternativas2.get(2).equals("x = 5/2 e x = - 1")) {
+                        System.out.println("Resposta correta!");
+                        acertou2 = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "d":
+                case "D":
+                    if (alternativas2.get(3).equals("x = 5/2 e x = - 1")) {
+                        System.out.println("Resposta correta!");
+                        acertou2 = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                default:
+                    System.out.println("Escolha inválida!");
+
+
+            }
+
+        } while (!acertou2);
+        if (tentativas2 <= 1) {
+            pontosTreino2 = 100;
+            System.out.println("Boa guereirro você acertou de primeira, você ganhou " + pontosTreino2 + "!");
+        } else if (tentativas2 > 1 && tentativas2 <= 3) {
+            pontosTreino2 = 50;
+        } else {
+            pontosTreino2 = 20;
+        }
+
+
+        pontos += pontosTreino2;
+        System.out.println("Parabéns, você concluiu o treino!!");
+        return pontos;
+
+    }
+
     public static int equacao1grau() {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
@@ -380,6 +660,96 @@ public class PIJogoRPG {
         } else {
             pontos = 20;
         }
+        return pontos;
+    }
+
+
+    public static int treino3()throws Exception{
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Polinômios: ");
+        Escreva("Um polinômio é uma expressão matemática formada por uma soma de termos, onde cada termo é composto por um número (chamado coeficiente) multiplicado por uma variável (geralmente x) elevada a uma potência não negativa (um número inteiro).\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Exemplo: \n(2x² + 3x + 1) + (x² - 2x + 4) = 3x² + x + 5\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        
+
+        Escreva("Agora teste o seu conhecimento com um exemplo:\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+
+        boolean acertou = false;
+        int tentativas = 0;
+        int pontos;
+
+        List alternativas = new ArrayList();
+        alternativas.add("-3y² + 16y - 6");
+        alternativas.add("-2y² + 16y - 6");//correta
+        alternativas.add("-2y² + 10y + 6");
+        alternativas.add("-2y² + 12y - 4");
+
+
+        do {
+            tentativas = tentativas + 1;
+            Collections.shuffle(alternativas);
+            System.out.println("Resolva: (y² + 4y - 5) + (-3y² + 12y - 1):");
+            System.out.println("a) " + alternativas.get(0));
+            System.out.println("b) " + alternativas.get(1));
+            System.out.println("c) " + alternativas.get(2));
+            System.out.println("d) " + alternativas.get(3));
+
+            System.out.print("Escolha uma alternativa: ");
+            String resposta = entrada.next();
+
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (alternativas.get(0).equals("-2y² + 16y - 6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "b":
+                case "B":
+                    if (alternativas.get(1).equals("-2y² + 16y - 6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "c":
+                case "C":
+                    if (alternativas.get(2).equals("-2y² + 16y - 6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "d":
+                case "D":
+                    if (alternativas.get(3).equals("-2y² + 16y - 6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                default:
+                    System.out.println("Escolha inválida!");
+
+
+            }
+
+        } while (!acertou);
+        if (tentativas <= 1) {
+            pontos = 100;
+        } else if (tentativas > 1 && tentativas <= 3) {
+            pontos = 50;
+        } else {
+            pontos = 20;
+        }
+        System.out.println("Parabéns, você concluiu o treino!!");
         return pontos;
     }
 

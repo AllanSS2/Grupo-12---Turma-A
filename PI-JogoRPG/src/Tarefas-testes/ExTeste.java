@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ExTeste {
+
+
+
+       
         
         public static int potencia1(){
             Scanner entrada = new Scanner(System.in);
