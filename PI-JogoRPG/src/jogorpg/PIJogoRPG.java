@@ -12,8 +12,8 @@ public class PIJogoRPG {
 
 
     //ajuste a velocidade dos caracteres impressos
-    //static int temp_dialog = 60,  temp_narrativa = 0;
-    static int temp_dialog = 0,  temp_narrativa = 0;
+    //static int temp_dialog = 60,  temp_narrativa = 20;
+    static int temp_dialog = 0, temp_narrativa = 0;
 
     public static void Escreva(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
         for (char caractere : mensagem.toCharArray()) {
@@ -26,7 +26,7 @@ public class PIJogoRPG {
     static int menu() throws Exception {
         Scanner entrada = new Scanner(System.in);
         int escolha_opcao;
-        int pontos=0;
+        int pontos = 0;
 
         do {
             Escreva("\n++========================++", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -60,495 +60,494 @@ public class PIJogoRPG {
     }
 
     //Perguntas do jogo
-    public static int potencia1(){
-            Scanner entrada = new Scanner(System.in);
-            boolean acertou = false;
-            int tentativas =0 ;
-            int pontos;
-
-            List alternativas = new ArrayList();
-            alternativas.add("156.250");
-            alternativas.add("390.625");//correta
-            alternativas.add("234.375");
-            alternativas.add("312.500");
-
-            
-            do{
-                tentativas = tentativas + 1;
-                Collections.shuffle(alternativas);
-                System.out.println("Sabendo que o valor de 5^7 é 78.125, qual o resultado de 5^8?");
-                System.out.println("a) " + alternativas.get(0));
-                System.out.println("b) " + alternativas.get(1));
-                System.out.println("c) " + alternativas.get(2));
-                System.out.println("d) " + alternativas.get(3));
-
-                System.out.print("Escolha uma alternativa: ");
-                String resposta = entrada.next();
-                
-
-                switch (resposta) {
-                    case "a":
-                    case "A":
-                        if (alternativas.get(0).equals("390.625")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "b":
-                    case "B":
-                        if (alternativas.get(1).equals("390.625")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "c":
-                    case "C":
-                        if (alternativas.get(2).equals("390.625")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "d":
-                    case "D":
-                        if (alternativas.get(3).equals("390.625")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    default:
-                    System.out.println("Escolha inválida!");
-
-                    
-            }
-
-        }while(!acertou);
-        if (tentativas <= 1) {
-            pontos = 100;
-            System.out.println("Boa guereirro você acertou de primeira, você ganhou "+pontos+"!");
-        }else if (tentativas > 1 && tentativas <=3) {
-            pontos = 50;
-        }else{
-            pontos = 20;
-        }
-
-        
-        return pontos;
-    }
-
-    public static int potencia2(){
+    public static int potencia1() {
         Scanner entrada = new Scanner(System.in);
-            boolean acertou = false;
-            int tentativas =0 ;
-            int pontos;
+        boolean acertou = false;
+        int tentativas = 0;
+        int pontos;
 
-            List alternativas = new ArrayList();
-            alternativas.add("x^6");//correta
-            alternativas.add("x^4");
-            alternativas.add("x^2");
-            alternativas.add("x^10");
+        List alternativas = new ArrayList();
+        alternativas.add("156.250");
+        alternativas.add("390.625");//correta
+        alternativas.add("234.375");
+        alternativas.add("312.500");
 
-            
-            do{
-                tentativas = tentativas + 1;
-                Collections.shuffle(alternativas);
-                System.out.println("Qual o valor da expressão x^8/x^2");
-                System.out.println("a) " + alternativas.get(0));
-                System.out.println("b) " + alternativas.get(1));
-                System.out.println("c) " + alternativas.get(2));
-                System.out.println("d) " + alternativas.get(3));
 
-                System.out.print("Escolha uma alternativa: ");
-                String resposta = entrada.next();
-                
+        do {
+            tentativas = tentativas + 1;
+            Collections.shuffle(alternativas);
+            System.out.println("Sabendo que o valor de 5^7 é 78.125, qual o resultado de 5^8?");
+            System.out.println("a) " + alternativas.get(0));
+            System.out.println("b) " + alternativas.get(1));
+            System.out.println("c) " + alternativas.get(2));
+            System.out.println("d) " + alternativas.get(3));
 
-                switch (resposta) {
-                    case "a":
-                    case "A":
-                        if (alternativas.get(0).equals("x^6")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "b":
-                    case "B":
-                        if (alternativas.get(1).equals("x^6")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "c":
-                    case "C":
-                        if (alternativas.get(2).equals("x^6")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "d":
-                    case "D":
-                        if (alternativas.get(3).equals("x^6")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    default:
+            System.out.print("Escolha uma alternativa: ");
+            String resposta = entrada.next();
+
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (alternativas.get(0).equals("390.625")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "b":
+                case "B":
+                    if (alternativas.get(1).equals("390.625")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "c":
+                case "C":
+                    if (alternativas.get(2).equals("390.625")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "d":
+                case "D":
+                    if (alternativas.get(3).equals("390.625")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                default:
                     System.out.println("Escolha inválida!");
 
-                    
+
             }
 
-        }while(!acertou);
+        } while (!acertou);
         if (tentativas <= 1) {
             pontos = 100;
-        }else if (tentativas > 1 && tentativas <=3) {
+            System.out.println("Boa guereirro você acertou de primeira, você ganhou " + pontos + "!");
+        } else if (tentativas > 1 && tentativas <= 3) {
             pontos = 50;
-        }else{
+        } else {
             pontos = 20;
         }
+
+
         return pontos;
     }
 
-    public static int equação1grau(){
+    public static int potencia2() {
         Scanner entrada = new Scanner(System.in);
-            boolean acertou = false;
-            int tentativas =0 ;
-            int pontos;
+        boolean acertou = false;
+        int tentativas = 0;
+        int pontos;
 
-            List alternativas = new ArrayList();
-            alternativas.add("2");
-            alternativas.add("6");//correta
-            alternativas.add("3");
-            alternativas.add("5");
+        List alternativas = new ArrayList();
+        alternativas.add("x^6");//correta
+        alternativas.add("x^4");
+        alternativas.add("x^2");
+        alternativas.add("x^10");
 
-            
-            do{
-                tentativas = tentativas + 1;
-                Collections.shuffle(alternativas);
-                System.out.println("Qual o valor de x: 3x+4=5x-8");
-                System.out.println("a) " + alternativas.get(0));
-                System.out.println("b) " + alternativas.get(1));
-                System.out.println("c) " + alternativas.get(2));
-                System.out.println("d) " + alternativas.get(3));
 
-                System.out.print("Escolha uma alternativa: ");
-                String resposta = entrada.next();
-                
+        do {
+            tentativas = tentativas + 1;
+            Collections.shuffle(alternativas);
+            System.out.println("Qual o valor da expressão x^8/x^2");
+            System.out.println("a) " + alternativas.get(0));
+            System.out.println("b) " + alternativas.get(1));
+            System.out.println("c) " + alternativas.get(2));
+            System.out.println("d) " + alternativas.get(3));
 
-                switch (resposta) {
-                    case "a":
-                    case "A":
-                        if (alternativas.get(0).equals("6")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "b":
-                    case "B":
-                        if (alternativas.get(1).equals("6")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "c":
-                    case "C":
-                        if (alternativas.get(2).equals("6")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "d":
-                    case "D":
-                        if (alternativas.get(3).equals("6")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    default:
+            System.out.print("Escolha uma alternativa: ");
+            String resposta = entrada.next();
+
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (alternativas.get(0).equals("x^6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "b":
+                case "B":
+                    if (alternativas.get(1).equals("x^6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "c":
+                case "C":
+                    if (alternativas.get(2).equals("x^6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "d":
+                case "D":
+                    if (alternativas.get(3).equals("x^6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                default:
                     System.out.println("Escolha inválida!");
 
-                    
+
             }
 
-        }while(!acertou);
+        } while (!acertou);
         if (tentativas <= 1) {
             pontos = 100;
-        }else if (tentativas > 1 && tentativas <=3) {
+        } else if (tentativas > 1 && tentativas <= 3) {
             pontos = 50;
-        }else{
+        } else {
             pontos = 20;
         }
         return pontos;
     }
 
-    public static int equação2grau(){
+    public static int equacao1grau() {
         Scanner entrada = new Scanner(System.in);
-            boolean acertou = false;
-            int tentativas =0 ;
-            int pontos;
+        boolean acertou = false;
+        int tentativas = 0;
+        int pontos;
 
-            List alternativas = new ArrayList();
-            alternativas.add("-5");
-            alternativas.add("-4");//correta
-            alternativas.add("0");
-            alternativas.add("-1");
+        List alternativas = new ArrayList();
+        alternativas.add("2");
+        alternativas.add("6");//correta
+        alternativas.add("3");
+        alternativas.add("5");
 
-            
-            do{
-                tentativas = tentativas + 1;
-                Collections.shuffle(alternativas);
-                System.out.println("A soma das soluções da equação x² + 4x - 5 = 0 é igual a:");
-                System.out.println("a) " + alternativas.get(0));
-                System.out.println("b) " + alternativas.get(1));
-                System.out.println("c) " + alternativas.get(2));
-                System.out.println("d) " + alternativas.get(3));
 
-                System.out.print("Escolha uma alternativa: ");
-                String resposta = entrada.next();
-                
+        do {
+            tentativas = tentativas + 1;
+            Collections.shuffle(alternativas);
+            System.out.println("Qual o valor de x: 3x+4=5x-8");
+            System.out.println("a) " + alternativas.get(0));
+            System.out.println("b) " + alternativas.get(1));
+            System.out.println("c) " + alternativas.get(2));
+            System.out.println("d) " + alternativas.get(3));
 
-                switch (resposta) {
-                    case "a":
-                    case "A":
-                        if (alternativas.get(0).equals("-4")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "b":
-                    case "B":
-                        if (alternativas.get(1).equals("-4")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "c":
-                    case "C":
-                        if (alternativas.get(2).equals("-4")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "d":
-                    case "D":
-                        if (alternativas.get(3).equals("-4")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    default:
+            System.out.print("Escolha uma alternativa: ");
+            String resposta = entrada.next();
+
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (alternativas.get(0).equals("6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "b":
+                case "B":
+                    if (alternativas.get(1).equals("6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "c":
+                case "C":
+                    if (alternativas.get(2).equals("6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "d":
+                case "D":
+                    if (alternativas.get(3).equals("6")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                default:
                     System.out.println("Escolha inválida!");
 
-                    
+
             }
 
-        }while(!acertou);
+        } while (!acertou);
         if (tentativas <= 1) {
             pontos = 100;
-        }else if (tentativas > 1 && tentativas <=3) {
+        } else if (tentativas > 1 && tentativas <= 3) {
             pontos = 50;
-        }else{
+        } else {
             pontos = 20;
         }
         return pontos;
     }
 
-    public static int polinomios1(){
+    public static int equacao2grau() {
         Scanner entrada = new Scanner(System.in);
-            boolean acertou = false;
-            int tentativas =0 ;
-            int pontos;
+        boolean acertou = false;
+        int tentativas = 0;
+        int pontos;
 
-            List alternativas = new ArrayList();
-            alternativas.add("5");
-            alternativas.add("4");//correta
-            alternativas.add("3");
-            alternativas.add("2");
+        List alternativas = new ArrayList();
+        alternativas.add("-5");
+        alternativas.add("-4");//correta
+        alternativas.add("0");
+        alternativas.add("-1");
 
-            
-            do{
-                tentativas = tentativas + 1;
-                Collections.shuffle(alternativas);
-                System.out.println("Dados os polinômios p(x) = 2x³ + 3x² + 1 e q(x) = 3x² + 5x - 15, a soma p(-2) + q(2) é igual a:");
-                System.out.println("a) " + alternativas.get(0));
-                System.out.println("b) " + alternativas.get(1));
-                System.out.println("c) " + alternativas.get(2));
-                System.out.println("d) " + alternativas.get(3));
 
-                System.out.print("Escolha uma alternativa: ");
-                String resposta = entrada.next();
-                
+        do {
+            tentativas = tentativas + 1;
+            Collections.shuffle(alternativas);
+            System.out.println("A soma das soluções da equação x² + 4x - 5 = 0 é igual a:");
+            System.out.println("a) " + alternativas.get(0));
+            System.out.println("b) " + alternativas.get(1));
+            System.out.println("c) " + alternativas.get(2));
+            System.out.println("d) " + alternativas.get(3));
 
-                switch (resposta) {
-                    case "a":
-                    case "A":
-                        if (alternativas.get(0).equals("4")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "b":
-                    case "B":
-                        if (alternativas.get(1).equals("4")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "c":
-                    case "C":
-                        if (alternativas.get(2).equals("4")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "d":
-                    case "D":
-                        if (alternativas.get(3).equals("4")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    default:
+            System.out.print("Escolha uma alternativa: ");
+            String resposta = entrada.next();
+
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (alternativas.get(0).equals("-4")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "b":
+                case "B":
+                    if (alternativas.get(1).equals("-4")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "c":
+                case "C":
+                    if (alternativas.get(2).equals("-4")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "d":
+                case "D":
+                    if (alternativas.get(3).equals("-4")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                default:
                     System.out.println("Escolha inválida!");
 
-                    
+
             }
 
-        }while(!acertou);
+        } while (!acertou);
         if (tentativas <= 1) {
             pontos = 100;
-        }else if (tentativas > 1 && tentativas <=3) {
+        } else if (tentativas > 1 && tentativas <= 3) {
             pontos = 50;
-        }else{
+        } else {
             pontos = 20;
         }
         return pontos;
     }
-    public static int polinomios2(){
+
+    public static int polinomios1() {
         Scanner entrada = new Scanner(System.in);
-            boolean acertou = false;
-            int tentativas =0 ;
-            int pontos;
+        boolean acertou = false;
+        int tentativas = 0;
+        int pontos;
 
-            List alternativas = new ArrayList();
-            alternativas.add("6x³ + 4x² - 3x + 1");
-            alternativas.add("6x³ + 12x² - 9x + 3");//correta
-            alternativas.add("2x² + 8x² - 5x + 3");
-            alternativas.add("12x³ + 3x² - 3x + 1");
+        List alternativas = new ArrayList();
+        alternativas.add("5");
+        alternativas.add("4");//correta
+        alternativas.add("3");
+        alternativas.add("2");
 
-            
-            do{
-                tentativas = tentativas + 1;
-                Collections.shuffle(alternativas);
-                System.out.println("O triplo do polinômio 2x³ + 4x² -3x + 1 é:");
-                System.out.println("a) " + alternativas.get(0));
-                System.out.println("b) " + alternativas.get(1));
-                System.out.println("c) " + alternativas.get(2));
-                System.out.println("d) " + alternativas.get(3));
 
-                System.out.print("Escolha uma alternativa: ");
-                String resposta = entrada.next();
-                
+        do {
+            tentativas = tentativas + 1;
+            Collections.shuffle(alternativas);
+            System.out.println("Dados os polinômios p(x) = 2x³ + 3x² + 1 e q(x) = 3x² + 5x - 15, a soma p(-2) + q(2) é igual a:");
+            System.out.println("a) " + alternativas.get(0));
+            System.out.println("b) " + alternativas.get(1));
+            System.out.println("c) " + alternativas.get(2));
+            System.out.println("d) " + alternativas.get(3));
 
-                switch (resposta) {
-                    case "a":
-                    case "A":
-                        if (alternativas.get(0).equals("6x³ + 12x² - 9x + 3")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "b":
-                    case "B":
-                        if (alternativas.get(1).equals("6x³ + 12x² - 9x + 3")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "c":
-                    case "C":
-                        if (alternativas.get(2).equals("6x³ + 12x² - 9x + 3")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    case "d":
-                    case "D":
-                        if (alternativas.get(3).equals("6x³ + 12x² - 9x + 3")) {
-                            System.out.println("Resposta correta!");
-                            acertou = true;
-                        } else {
-                            System.out.println("Resposta incorreta!");
-                        }
-                        break;
-                    default:
+            System.out.print("Escolha uma alternativa: ");
+            String resposta = entrada.next();
+
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (alternativas.get(0).equals("4")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "b":
+                case "B":
+                    if (alternativas.get(1).equals("4")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "c":
+                case "C":
+                    if (alternativas.get(2).equals("4")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "d":
+                case "D":
+                    if (alternativas.get(3).equals("4")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                default:
                     System.out.println("Escolha inválida!");
 
-                    
+
             }
 
-        }while(!acertou);
+        } while (!acertou);
         if (tentativas <= 1) {
             pontos = 100;
-        }else if (tentativas > 1 && tentativas <=3) {
+        } else if (tentativas > 1 && tentativas <= 3) {
             pontos = 50;
-        }else{
+        } else {
+            pontos = 20;
+        }
+        return pontos;
+    }
+
+    public static int polinomios2() {
+        Scanner entrada = new Scanner(System.in);
+        boolean acertou = false;
+        int tentativas = 0;
+        int pontos;
+
+        List alternativas = new ArrayList();
+        alternativas.add("6x³ + 4x² - 3x + 1");
+        alternativas.add("6x³ + 12x² - 9x + 3");//correta
+        alternativas.add("2x² + 8x² - 5x + 3");
+        alternativas.add("12x³ + 3x² - 3x + 1");
+
+
+        do {
+            tentativas = tentativas + 1;
+            Collections.shuffle(alternativas);
+            System.out.println("O triplo do polinômio 2x³ + 4x² -3x + 1 é:");
+            System.out.println("a) " + alternativas.get(0));
+            System.out.println("b) " + alternativas.get(1));
+            System.out.println("c) " + alternativas.get(2));
+            System.out.println("d) " + alternativas.get(3));
+
+            System.out.print("Escolha uma alternativa: ");
+            String resposta = entrada.next();
+
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (alternativas.get(0).equals("6x³ + 12x² - 9x + 3")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "b":
+                case "B":
+                    if (alternativas.get(1).equals("6x³ + 12x² - 9x + 3")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "c":
+                case "C":
+                    if (alternativas.get(2).equals("6x³ + 12x² - 9x + 3")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                case "d":
+                case "D":
+                    if (alternativas.get(3).equals("6x³ + 12x² - 9x + 3")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                    }
+                    break;
+                default:
+                    System.out.println("Escolha inválida!");
+
+
+            }
+
+        } while (!acertou);
+        if (tentativas <= 1) {
+            pontos = 100;
+        } else if (tentativas > 1 && tentativas <= 3) {
+            pontos = 50;
+        } else {
             pontos = 20;
         }
         return pontos;
     }
 
 
-
-
-    // Função do jogo 
+    // Função do jogo
     static void jogo() throws Exception {
         Scanner entrada = new Scanner(System.in);
-        
+
         System.out.println();
         Escreva("Viajante: Espera... Quem é você? Não, vou tentar adivinhar...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Devo chamá-lo de Ace? hmmm... Jovem Ace, um ótimo nome para um guerreiro como você!\n", TimeUnit.MILLISECONDS, temp_dialog);
@@ -669,7 +668,7 @@ public class PIJogoRPG {
 
         Escreva("Pai: Como eu já havia dito, existem três jóias perdidas, cada uma delas se encontram em lugares distintos do reino de Math Adventure...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Pai: Há um ancião guardião protegendo-as de malfeitores nos locais...\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Pai: A primeira jóia, regida por um fulgor azul, representa a sabedoria. Quem a possuísse adquirirá um vasto conhecimento sobre o mundo.\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Pai: A primeira jóia, regida por um fulgor azul, representa a sabedoria. Quem a possuísse adquirirá uma vasta sabedoria sobre o mundo.\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Pai: Mas ela é guardada por um ancião chamado Ragnar, cuja sabedoria está além dos limites humanos.\n\n", TimeUnit.MILLISECONDS, temp_dialog);
         int escolha_opcao2;
 
@@ -696,25 +695,25 @@ public class PIJogoRPG {
 
         Escreva("Escolha sua espada:\n", TimeUnit.MILLISECONDS, temp_dialog);
         int escolha_3;
-        do{
-        Escreva("Pai: Pois bem! Após a criação de sua espada quero que você vá atrás das jóias pela honra de nossa família!\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("1 - Mas parece muito perigoso...\n2 - Já nasci pronto!\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        escolha_3 = entrada.nextInt();
+        do {
+            Escreva("Pai: Pois bem! Após a criação de sua espada quero que você vá atrás das jóias pela honra de nossa família!\n", TimeUnit.MILLISECONDS, temp_dialog);
+            Escreva("1 - Mas parece muito perigoso...\n2 - Já nasci pronto!\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolha_3 = entrada.nextInt();
 
-        switch(escolha_3){
-            case 1:
-                Escreva("Ace: Eu sou muito novo para enfrentar esse tipo de desafio! argh\n\n", TimeUnit.MILLISECONDS, temp_dialog);
-                Escreva("Pai: Na vida precisamos enfrentar desafios para um bem maior...\n", TimeUnit.MILLISECONDS, temp_dialog);
-                Escreva("Pai: Esta jornada fará você ficar mais sábio, corajoso e forte...\n", TimeUnit.MILLISECONDS, temp_dialog);
-                Escreva("Pai: Você irá me dar muito orgulho indo ...\n", TimeUnit.MILLISECONDS, temp_dialog);
+            switch (escolha_3) {
+                case 1:
+                    Escreva("Ace: Eu sou muito novo para enfrentar esse tipo de desafio! argh\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Pai: Na vida precisamos enfrentar desafios para um bem maior...\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Pai: Esta jornada fará você ficar mais sábio, corajoso e forte...\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Pai: Você irá me dar muito orgulho indo ...\n", TimeUnit.MILLISECONDS, temp_dialog);
 
-            case 2:
-                Escreva("Ace: Mas como vou ter as instruções certas?\n\n", TimeUnit.MILLISECONDS, temp_dialog);
-                break;
-        }
-    }while (escolha_3 != 1 && escolha_3 != 2);
+                case 2:
+                    Escreva("Ace: Mas como vou ter as instruções certas?\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    break;
+            }
+        } while (escolha_3 != 1 && escolha_3 != 2);
 
-        Escreva("Pai: O VIAJANTE é quem pode te instruir em tudo o que precisa, deixarei você nas mãos dele...!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Pai: O VIAJANTE (pássaro) é quem pode te instruir em tudo o que precisa, deixarei você nas mãos dele...!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Sabendo que você quer dar orgulho para o seu pai, siga minhas instruções!\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Ao norte de Math adventure, é onde a Jóia da sabedoria está sendo guardada por Ragnar, você precsará tomar muitos cuidados..\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Será necessário muita estratégia e conhecimento para derrota-lo, já que você possui uma espada básica!\n", TimeUnit.MILLISECONDS, temp_dialog);
@@ -722,10 +721,10 @@ public class PIJogoRPG {
 
     }
 
-    static int capitulo1() throws Exception{
+    static int capitulo1() throws Exception {
         //Capitulo 1
         Scanner entrada = new Scanner(System.in);
-        int pontos=0;
+        int pontos = 0;
 
         Escreva("++== A JÓIA DA SABEDORIA ==+\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("Ace vai em direção ao Norte, atrás da pedra da sabedoria...\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -735,43 +734,43 @@ public class PIJogoRPG {
         Escreva("Ace após entrar no covil, encontra-se de cara com Ragnar tirando uma soneca...AAUF AAUF\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
         int escolha_entrar;
 
-        do{
-        Escreva("1 - Pegar a jóia escondido enquanto Ragnar dorme.\n2 - Derrotar Ragnar enquanto dorme.\n", TimeUnit.MILLISECONDS, temp_dialog);
-        escolha_entrar = entrada.nextInt();
+        do {
+            Escreva("1 - Pegar a jóia escondido enquanto Ragnar dorme.\n2 - Derrotar Ragnar enquanto dorme.\n", TimeUnit.MILLISECONDS, temp_dialog);
+            escolha_entrar = entrada.nextInt();
 
-        if (escolha_entrar == 1) {
-            Escreva("Ace: Nunca imaginei estar em um lugar desses, preciso de coragem\n", TimeUnit.MILLISECONDS, temp_dialog);
-            Escreva("Ace: Vou no estilo furtivo, Ragnar não parece fazer acordos...rs\n\n", TimeUnit.MILLISECONDS, temp_dialog);
-        } else if (escolha_entrar == 2) {
-            Escreva("Ace: Enquanto ele dorme é minha melhor oportunidade de derrotá-lo\n", TimeUnit.MILLISECONDS, temp_dialog);
-            Escreva("Ace: Vou no estilo furtivo, Ragnar não parece fazer acordos...rs\n\n", TimeUnit.MILLISECONDS, temp_dialog);
-        }else {
-            Escreva("hm... essa opção não conheço, mas escolha alguma correspondente:\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        }
-    }while(escolha_entrar != 1 && escolha_entrar != 2);
+            if (escolha_entrar == 1) {
+                Escreva("Ace: Nunca imaginei estar em um lugar desses, preciso de coragem\n", TimeUnit.MILLISECONDS, temp_dialog);
+                Escreva("Ace: Vou no estilo furtivo, Ragnar não parece fazer acordos...rs\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+            } else if (escolha_entrar == 2) {
+                Escreva("Ace: Enquanto ele dorme é minha melhor oportunidade de derrotá-lo\n", TimeUnit.MILLISECONDS, temp_dialog);
+                Escreva("Ace: Vou no estilo furtivo, Ragnar não parece fazer acordos...rs\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+            } else {
+                Escreva("hm... essa opção não conheço, mas escolha alguma correspondente:\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            }
+        } while (escolha_entrar != 1 && escolha_entrar != 2);
         Escreva("Viajante: Ace, você precisa ser rápido, pois ele pode acordar a qualquer momento...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Ace fica muito apreensivo e acelera o passo no estilo furtivo\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("Estava com tanto medo que não olhou ao seu redor... Tropeçou e caiu..PUFFFF\n", TimeUnit.MILLISECONDS, temp_narrativa);
         int escolha_medo;
 
-        do{
-        Escreva("Ragnar acorda furioso com o extremo barulho feito por Ace e vai em direção à ele\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        Escreva("1 - Correr como se não ouvesse o amanhã.\n2 - Enfrentar Ragnar.\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        escolha_medo = entrada.nextInt();
+        do {
+            Escreva("Ragnar acorda furioso com o extremo barulho feito por Ace e vai em direção à ele\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("1 - Correr como se não ouvesse o amanhã.\n2 - Enfrentar Ragnar.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolha_medo = entrada.nextInt();
 
-        if(escolha_medo > 0 && escolha_medo <= 2){
-            switch (escolha_medo){
-            case 1:
-                Escreva("Ace Corre desesperadamente e novamente cai..PUFFF\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
-                break;
-            case 2:
-                Escreva(" ", TimeUnit.MILLISECONDS, temp_narrativa);
-                break;
+            if (escolha_medo > 0 && escolha_medo <= 2) {
+                switch (escolha_medo) {
+                    case 1:
+                        Escreva("Ace Corre desesperadamente e novamente cai..PUFFF\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                        break;
+                    case 2:
+                        Escreva(" ", TimeUnit.MILLISECONDS, temp_narrativa);
+                        break;
+                }
+            } else {
+                System.out.println("Entrada invalida, tente novamente!!");
             }
-        }else{
-            System.out.println("Entrada invalida, tente novamente!!");
-        }
-    }while(escolha_medo != 1 && escolha_medo != 2);
+        } while (escolha_medo != 1 && escolha_medo != 2);
 
         Escreva("Viajante: Você será obrigado a derrotar Ragnar agora!!\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Necessário usar o seu pouco conhecimento em matématica para concluir a missão!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
@@ -780,32 +779,133 @@ public class PIJogoRPG {
 
         pontos += potencia1();
 
-        Escreva("Boa Ace, você venceu sua primeira batalha!\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        //Mais um pouco de historia 
-
+        Escreva("Viajante: Boa Ace!!!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***RAGNAR CAI DESACORDADO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Viajante??? Será que consegui derrotá-lo de primeira???\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Ele não se mexe, não achei que seria fácil assim...\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Agora posso pegar a jóia tranquilamente..UFFSS\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE VAI EM DIREÇÃO A JÓIA SEM SE PREOCUPAR***\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("***QUANDO ACE ESTAVA PRÓXIMO, RAGNAR ACORDA E O ATACA, IMPULSIONANDO-O PARA LONGE DA JÓIA***\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("***ACE FICA DESACORDADO POR UM MOMENTO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Viajante: Ace!!!! Acorda, O Ragnar ainda esta de pé... Muito mais furioso, acerte a próxima questão para finaliza-lo!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE SEM FORÇAS SE LEVANTA E TENTA SUA ULTIMA QUESTÃO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
 
         pontos += potencia2();
 
+        Escreva("Viajante: Essa foi por pouco... aparentemente estava fácil...\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Creio que os próximos desafios ficarão mais difíceis\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Agora pegue a jóia da sabedoria, levaremos conosco...\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Você vai precisar forjar essa pedra em sua espada, para que consiga derrotar o próximo ancião!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        int escolha;
+        int contador = 1;
+
+        do {
+            Escreva("COMO DESEJA FORJAR SUA ESPADA?\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("1 - Forjar igual seu pai ensinou.\n2 - Forjar de qualquer jeito.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolha = entrada.nextInt();
+
+            switch (escolha) {
+                case 1:
+                    Escreva("Ace: É... Forjar como meu pai ensinou, é o melhor método!!\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Muita eficiência na hora de forjar...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("PROCESSO DE FORJAMENTO CONCLUÍDO COM SUCESSO!!\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    break;
+
+                case 2:
+                    Escreva("PROCESSO DE FORJAMENTO FALHOU!\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("Ace: Eu vou tentar novamente, esse método funciona também!! Grrr...\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace forjou " + contador++ + " vez (s) e falhou.\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    if (contador == 3) {
+                        Escreva("A JÓIA VAI SE DESFAZER SE CONTINUAR FORJANDO NESSE MÉTODO.\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    }
+                    if (contador >= 5)
+                        Escreva("A ESPADA NÃO VAI SERVIR MAIS CASO CONTINUE...\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            }
+        } while (escolha != 1);
+
+        Escreva("Viajante: Essa espada faz parte de você agora, jamais à perca!!", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Caso caia nas mãos de pessoas erradas, causará grandes problemas....", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Com essa jóia fincada em sua espada, a sabedoria te perseguirá!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Verdade, me sinto mais sábio e confiante!!!\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Meu pai sentirá orgulho quando eu retornar dessa jornada!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
 
         return pontos;
+
     }
 
 
-    public static int capitulo2(){
+    public static int capitulo2() throws Exception {
         Scanner entrada = new Scanner(System.in);
         int pontos = 0;
+        int escolha;
+
+        Escreva("++== A JÓIA DA CORAGEM ==+\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Viajante: Recebi uma notícia que seu pai não está muito bem de saúde...\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Caso queira dar orgulho para ele através desse feito, precisamos ir para a próxima etapa rápidamente!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+
+        do {
+            Escreva("1 - Como assim?! Ele estava tão bem...\n2 - Quanto tempo de vida ele tem? Vou terminar essa jornada antes!!\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolha = entrada.nextInt();
+
+            switch (escolha) {
+                case 1:
+                    Escreva("Viajante: Infelizmente seu pai já é um senhor de idade...\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Ele esta passando por uns problemas de saúde graves e esta debilitado...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Quanto tempo de vida ele tem? Preciso honra-lo!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    break;
+
+                case 2:
+                    Escreva(" ", TimeUnit.MILLISECONDS, temp_narrativa);
+                    break;
+            }
+        } while (escolha != 1 && escolha != 2);
+
+        Escreva("Viajante: Seu pai tem 3 dias de vida apenas...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Só isso?\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Sim, infelizmente...\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Você vai precisar usar sua sabedoria para enfrentar tudo isso...\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Vamos em busca da Jóia da Coragem para encorajá-lo concluir a jornada contra o tempo!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+
+        do {
+            Escreva("1 - Agora desânimei de seguir em frente...\n2 - Me conta mais sobre a história dessa jóia...\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolha = entrada.nextInt();
+
+            switch (escolha) {
+                case 1:
+                    Escreva("Viajante: Lembra do que seu pai te disse?\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Ele quer ser honrado por você...\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Mesmo diante destas circunstâncias que vem ocorrendo...\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: É necessário sabedoria para lidar, pois caso você desista, será só mais um derrotado!\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Você precisa seguir em frente!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    break;
+
+                case 2:
+                    Escreva(" ", TimeUnit.MILLISECONDS, temp_narrativa);
+                    break;
+            }
+        } while (escolha != 2);
+
+        Escreva("Viajante: A jóia da coragem possuí um brilho amarelo e expele uma aura de valentia...\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajane: Aquele que a possuir, encontrará coragem infinita\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Capaz de enfrentar os desafios mais temíveis sem recuar\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Protegido por um ancião que acredita na justiça e no poder do heroísmo!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Grande história... Mas eu não tenho muito tempo...\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Me diga para onde devo ir!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Esta jóia esta protegida no leste subterraneo\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Será necessário muito empenho para percorrer este percurso\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Utilizarei da minha sabedoria para chegar lá!!!\n", TimeUnit.MILLISECONDS, temp_dialog);
 
         // mais historia
-        pontos += equação1grau();
+        pontos += equacao1grau();
 
         // mais historia
 
-        pontos += equação2grau();
-        
+        pontos += equacao2grau();
+
         return pontos;
     }
 
-    public static int capitulo3(){
+    public static int capitulo3() throws Exception {
         Scanner entrada = new Scanner(System.in);
         int pontos = 0;
 
@@ -821,7 +921,7 @@ public class PIJogoRPG {
 
 
     //Escreva("Viajante: Ace ", TimeUnit.MILLISECONDS, temp_dialog);
-    static void instrucoes() throws Exception{
+    static void instrucoes() throws Exception {
         Escreva("\n\n++== Introdução ao Jogo ==++\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("Bem-vindo ao Math Adventure, um mundo de coragem, sabedoria e força. Neste jogo RPG,\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("você embarcará em uma jornada épica para encontrar e reunir as três Jóias de fortalecimento: a Pedra da\n", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -840,20 +940,20 @@ public class PIJogoRPG {
         Escreva("\n\n++== Tipos de Missões ==++\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("Jóia da Sabedoria (AZUL): Relacionado diretamente com cálculos de Potenciação.\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("Jóia da Coragem (AMARELA): Relacionado diretamente com cálculos de Equações.\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        Escreva("Jóia da Forçã (VERMELHA): Relacionado diretamente com cálculos de Polinômios.", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Jóia da Força (VERMELHA): Relacionado diretamente com cálculos de Polinômios.", TimeUnit.MILLISECONDS, temp_narrativa);
 
         Escreva("\n\n++== Combate ==++\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("O combate é uma parte essencial do jogo. Enfrente os anciões acertando cálculos matemáticos, sendo necessário habilidades e estratégias.", TimeUnit.MILLISECONDS, temp_narrativa);
 
         Escreva("\n\n++== Conclusão ==++\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("Encontre e reúna as Jóias perdidas do fortalecimento para restaurar a paz e a harmonia no reino. Sua sabedoria,\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        Escreva("coragem e força serão testadas a cada passo da jornada.\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        
+        Escreva("coragem e força serão testadas a cada passo da jornada.\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
     }
 
     static void creditos() throws Exception {
         Escreva("\n\n++== DESENVOLVEDORES ==++\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        Escreva("++== Juan Batista ==++\n++== Allan Sampaio ==++\n++== Iran Vieira ==++", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("++== Juan Batista ==++\n++== Allan Sampaio ==++\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
     // Função para exibir as opções de espadas e obter a escolha do usuário
@@ -894,7 +994,7 @@ public class PIJogoRPG {
     public static void main(String[] args) throws Exception {
         int pontosJogador;
         pontosJogador = menu();
-        System.out.println("Pontos do jogador: "+pontosJogador);
+        System.out.println("Pontos do jogador: " + pontosJogador);
         /*String[] espadas = {"Espada Longa", "Espada Curta", "Espada Bastarda", "Katana", "Sabre"};
         int escolha = obterEscolhaUsuario(espadas);
         String espadaEscolhida = escolherEspada(espadas, escolha);
