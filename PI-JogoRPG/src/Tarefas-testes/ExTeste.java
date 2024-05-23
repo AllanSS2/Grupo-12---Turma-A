@@ -95,7 +95,9 @@ public class ExTeste {
 
         } while (!acertou);
         if(acertou = true){
-            System.out.println("\n\nO treino1 funcionou!!");
+            System.out.println("\n\nO treino 1 funcionou!!\n\n");
+        }else{
+            System.out.println("\n\nO treino 1 deu erro!\n\n");
         }
 
         return pontos;
@@ -191,9 +193,9 @@ public class ExTeste {
 
         } while (!acertou);
         if(acertou = true){
-            System.out.println("\n\nA tarefa 1 funcionou!!");
+            System.out.println("\n\nA tarefa 1 funcionou!!\n\n");
         }else{
-            System.out.println("A tarefa 1 deu erro!");
+            System.out.println("\n\nA tarefa 1 deu erro!\n\n");
         }
 
         return pontos;
