@@ -35,8 +35,8 @@ public class PIJogoRPG {
             escolha_opcao = entrada.nextInt();
 
             if (escolha_opcao == 1) {
-                jogo();
-                pontos += capitulo1();
+                //jogo();
+                //pontos += capitulo1();
                 pontos += capitulo2();
                 pontos += capitulo3();
                 return pontos;
@@ -1011,8 +1011,7 @@ public class PIJogoRPG {
 
         Escreva("Pai: seu avô me contava uma história mitologica quando eu era pequeno...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Pai: Há muito tempo, em um reino distante, existiam três jóias mágicas de fortalecimento\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Pai: Diziam as lendas que essas pedras eram presentes dos deuses, concedidas aos mortais como uma prova de sua " +
-                "confiança e habilidade para moldar o destino.\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Pai: Diziam as lendas que essas pedras eram presentes dos deuses, concedidas aos mortais como uma prova de sua confiança e habilidade para moldar o destino.\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Pai: Cada pedra fica protegida por um ancião, e para conquista-lá, é necessário derrotá-lo...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Pai: Eu tinha medo e por isso nunca quis procurar saber mais dessa história...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Pai: Venha, vou te ensinar a forjar uma espada!\n", TimeUnit.MILLISECONDS, temp_dialog);
@@ -1224,7 +1223,7 @@ public class PIJogoRPG {
                     break;
 
                 case 2:
-                    Escreva(" ", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("dwadawdawdawdawdawdawdawdawdaw", TimeUnit.MILLISECONDS, temp_narrativa);
                     break;
             }
         } while (escolha != 1 && escolha != 2);
@@ -1250,7 +1249,7 @@ public class PIJogoRPG {
                     break;
 
                 case 2:
-                    Escreva(" ", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("dwadawdawdawdawdawdawdawdawdaw", TimeUnit.MILLISECONDS, temp_narrativa);
                     break;
             }
         } while (escolhaSeguir != 2);
@@ -1264,7 +1263,7 @@ public class PIJogoRPG {
         Escreva("Viajante: Esta jóia esta protegida no leste subterraneo\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Será necessário muito empenho para percorrer este percurso\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Ace: Utilizarei da minha sabedoria para chegar lá!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("***1° DIA DE 3***", null, escolhaSeguir);
+        Escreva("***1° DIA DE 3***\n\n",TimeUnit.MILLISECONDS, temp_dialog);
         int escolhaCaminho;
 
         do {
