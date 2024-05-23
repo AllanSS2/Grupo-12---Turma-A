@@ -1,10 +1,7 @@
 package jogorpg;
 
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 
@@ -35,8 +32,8 @@ public class PIJogoRPG {
             escolha_opcao = entrada.nextInt();
 
             if (escolha_opcao == 1) {
-                //jogo();
-                //pontos += capitulo1();
+                jogo();
+                pontos += capitulo1();
                 pontos += capitulo2();
                 pontos += capitulo3();
                 return pontos;
@@ -86,13 +83,13 @@ public class PIJogoRPG {
         do {
             tentativas = tentativas + 1;
             Collections.shuffle(alternativas);
-            System.out.println("Qual o resultado de 5^3 . 5^4?");
-            System.out.println("a) " + alternativas.get(0));
-            System.out.println("b) " + alternativas.get(1));
-            System.out.println("c) " + alternativas.get(2));
-            System.out.println("d) " + alternativas.get(3));
+            Escreva("Qual o resultado de 5^3 . 5^4?",TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("a) " + alternativas.get(0),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("b) " + alternativas.get(1),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("c) " + alternativas.get(2),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("d) " + alternativas.get(3),TimeUnit.MILLISECONDS, temp_narrativa);
 
-            System.out.print("Escolha uma alternativa: ");
+            Escreva("Escolha uma alternativa: ", TimeUnit.MILLISECONDS, temp_narrativa);
             String resposta = entrada.next();
 
 
@@ -100,41 +97,41 @@ public class PIJogoRPG {
                 case "a":
                 case "A":
                     if (alternativas.get(0).equals("78125")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "b":
                 case "B":
                     if (alternativas.get(1).equals("78125")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "c":
                 case "C":
                     if (alternativas.get(2).equals("78125")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "d":
                 case "D":
                     if (alternativas.get(3).equals("78125")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 default:
-                    System.out.println("Escolha inválida!");
+                    Escreva("Escolha inválida!",TimeUnit.MILLISECONDS, temp_narrativa);
 
 
             }
@@ -142,19 +139,19 @@ public class PIJogoRPG {
         } while (!acertou);
         if (tentativas <= 1) {
             pontos = 100;
-            System.out.println("Boa guereirro você acertou de primeira, você ganhou " + pontos + "!");
+            Escreva("Boa guereirro você acertou de primeira, você ganhou " + pontos + "!",TimeUnit.MILLISECONDS, temp_narrativa);
         } else if (tentativas > 1 && tentativas <= 3) {
             pontos = 50;
         } else {
             pontos = 20;
         }
-        System.out.println("Parabéns, você concluiu o treino!!");
+        Escreva("Parabéns, você concluiu o treino!!",TimeUnit.MILLISECONDS, temp_narrativa);
 
         return pontos;
 
     }
 
-    public static int potencia1() {
+    public static int potencia1() throws Exception {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
         int tentativas = 0;
@@ -170,13 +167,13 @@ public class PIJogoRPG {
         do {
             tentativas = tentativas + 1;
             Collections.shuffle(alternativas);
-            System.out.println("Sabendo que o valor de 5^7 é 78.125, qual o resultado de 5^8?");
-            System.out.println("a) " + alternativas.get(0));
-            System.out.println("b) " + alternativas.get(1));
-            System.out.println("c) " + alternativas.get(2));
-            System.out.println("d) " + alternativas.get(3));
+            Escreva("Sabendo que o valor de 5^7 é 78.125, qual o resultado de 5^8?",TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("a) " + alternativas.get(0),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("b) " + alternativas.get(1),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("c) " + alternativas.get(2),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("d) " + alternativas.get(3),TimeUnit.MILLISECONDS, temp_narrativa);
 
-            System.out.print("Escolha uma alternativa: ");
+            Escreva("Escolha uma alternativa: ",TimeUnit.MILLISECONDS, temp_narrativa);
             String resposta = entrada.next();
 
 
@@ -184,41 +181,41 @@ public class PIJogoRPG {
                 case "a":
                 case "A":
                     if (alternativas.get(0).equals("390.625")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "b":
                 case "B":
                     if (alternativas.get(1).equals("390.625")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "c":
                 case "C":
                     if (alternativas.get(2).equals("390.625")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "d":
                 case "D":
                     if (alternativas.get(3).equals("390.625")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 default:
-                    System.out.println("Escolha inválida!");
+                    Escreva("Escolha inválida!",TimeUnit.MILLISECONDS, temp_narrativa);
 
 
             }
@@ -226,7 +223,7 @@ public class PIJogoRPG {
         } while (!acertou);
         if (tentativas <= 1) {
             pontos = 100;
-            System.out.println("Boa guereirro você acertou de primeira, você ganhou " + pontos + "!");
+            Escreva("Boa guereirro você acertou de primeira, você ganhou " + pontos + "!",TimeUnit.MILLISECONDS, temp_narrativa);
         } else if (tentativas > 1 && tentativas <= 3) {
             pontos = 50;
         } else {
@@ -237,7 +234,7 @@ public class PIJogoRPG {
         return pontos;
     }
 
-    public static int potencia2() {
+    public static int potencia2() throws Exception {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
         int tentativas = 0;
@@ -253,11 +250,11 @@ public class PIJogoRPG {
         do {
             tentativas = tentativas + 1;
             Collections.shuffle(alternativas);
-            System.out.println("Qual o valor da expressão x^8/x^2");
-            System.out.println("a) " + alternativas.get(0));
-            System.out.println("b) " + alternativas.get(1));
-            System.out.println("c) " + alternativas.get(2));
-            System.out.println("d) " + alternativas.get(3));
+            Escreva("Qual o valor da expressão x^8/x^2",TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("a) " + alternativas.get(0),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("b) " + alternativas.get(1),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("c) " + alternativas.get(2),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("d) " + alternativas.get(3),TimeUnit.MILLISECONDS, temp_narrativa);
 
             System.out.print("Escolha uma alternativa: ");
             String resposta = entrada.next();
@@ -267,41 +264,41 @@ public class PIJogoRPG {
                 case "a":
                 case "A":
                     if (alternativas.get(0).equals("x^6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "b":
                 case "B":
                     if (alternativas.get(1).equals("x^6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "c":
                 case "C":
                     if (alternativas.get(2).equals("x^6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "d":
                 case "D":
                     if (alternativas.get(3).equals("x^6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 default:
-                    System.out.println("Escolha inválida!");
+                    Escreva("Escolha inválida!",TimeUnit.MILLISECONDS, temp_narrativa);
 
 
             }
@@ -320,9 +317,9 @@ public class PIJogoRPG {
 
     public static int treino2() throws Exception{
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Equações de 1 grau: ");
-        Escreva("As equações de primeiro grau são sentenças matemáticas que estabelecem relações de igualdade entre termos conhecidos e desconhecidos, representadas sob a forma: ax+b = 0\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("O objetivo de resolver uma equação de primeiro grau é descobrir o valor desconhecido, ou seja, encontrar o valor da incógnita que torna a igualdade verdadeira.\nPara isso, deve-se isolar os elementos desconhecidos em um dos lados do sinal de igual e os valores constantes do outro lado. Contudo, é importante observar que a mudança de posição desses elementos deve ser feita de forma que a igualdade continue sendo verdadeira. Quando um termo da equação mudar de lado do sinal de igual, devemos inverter a operação. Assim, se tiver multiplicando, passará dividindo, se tiver somando passará subtraindo e vice-versa.\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Equações de 1 grau: ",TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("As equações de primeiro grau são sentenças matemáticas que estabelecem relações de igualdade entre termos conhecidos e desconhecidos, representadas sob a forma: ax+b = 0\n",TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("O objetivo de resolver uma equação de primeiro grau é descobrir o valor desconhecido, ou seja, encontrar o valor da incógnita que torna a igualdade verdadeira.\nPara isso, deve-se isolar os elementos desconhecidos em um dos lados do sinal de igual e os valores constantes do outro lado. Contudo, é importante observar que a mudança de posição desses elementos deve ser feita de forma que a igualdade continue sendo verdadeira. Quando um termo da equação mudar de lado do sinal de igual, devemos inverter a operação. Assim, se tiver multiplicando, passará dividindo, se tiver somando passará subtraindo e vice-versa.\n",TimeUnit.MILLISECONDS, temp_narrativa);
 
         Escreva("Agora teste o seu conhecimento com um exemplo:\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
 
@@ -341,11 +338,11 @@ public class PIJogoRPG {
         do {
             tentativas = tentativas + 1;
             Collections.shuffle(alternativas);
-            System.out.println("Qual o valor da incógnita x que torna a igualdade 8x - 3 = 5 verdadeira?");
-            System.out.println("a) " + alternativas.get(0));
-            System.out.println("b) " + alternativas.get(1));
-            System.out.println("c) " + alternativas.get(2));
-            System.out.println("d) " + alternativas.get(3));
+            Escreva("Qual o valor da incógnita x que torna a igualdade 8x - 3 = 5 verdadeira?",TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("a) " + alternativas.get(0),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("b) " + alternativas.get(1),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("c) " + alternativas.get(2),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("d) " + alternativas.get(3),TimeUnit.MILLISECONDS, temp_narrativa);
 
             System.out.print("Escolha uma alternativa: ");
             String resposta = entrada.next();
@@ -355,41 +352,41 @@ public class PIJogoRPG {
                 case "a":
                 case "A":
                     if (alternativas.get(0).equals("1")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "b":
                 case "B":
                     if (alternativas.get(1).equals("1")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "c":
                 case "C":
                     if (alternativas.get(2).equals("1")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "d":
                 case "D":
                     if (alternativas.get(3).equals("1")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 default:
-                    System.out.println("Escolha inválida!");
+                    Escreva("Escolha inválida!",TimeUnit.MILLISECONDS, temp_narrativa);
 
 
             }
@@ -397,7 +394,7 @@ public class PIJogoRPG {
         } while (!acertou);
         if (tentativas <= 1) {
             pontosTreino = 100;
-            System.out.println("Boa guereirro você acertou de primeira, você ganhou " + pontosTreino + "!");
+            Escreva("Boa guereirro você acertou de primeira, você ganhou " + pontosTreino + "!",TimeUnit.MILLISECONDS, temp_narrativa);
         } else if (tentativas > 1 && tentativas <= 3) {
             pontosTreino = 50;
         } else {
@@ -408,15 +405,15 @@ public class PIJogoRPG {
         pontos += pontosTreino;
 
         System.out.println();
-        System.out.println("Equações de 2 grau: ");
+        Escreva("Equações de 2 grau: ",TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("A equação do segundo grau recebe esse nome porque é uma equação polinomial cujo termo de maior grau está elevado ao quadrado. Também chamada de equação quadrática, é representada por:\r\n" + //
-                        "\r\n" + //
-                        "ax² + bx + c = 0\r\n" + //
-                        "\r\n" + //
-                        "Numa equação do 2º grau, o x é a incógnita e representa um valor desconhecido. Já as letras a, b e c são chamadas coeficientes da equação.\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Resolver uma equação de segundo grau, significa determinar os valores reais de x, que tornam a equação verdadeira. Esses valores são denominados raízes da equação.\n", TimeUnit.MILLISECONDS, temp_dialog);
+                "\r\n" + //
+                "ax² + bx + c = 0\r\n" + //
+                "\r\n" + //
+                "Numa equação do 2º grau, o x é a incógnita e representa um valor desconhecido. Já as letras a, b e c são chamadas coeficientes da equação.\n",TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Resolver uma equação de segundo grau, significa determinar os valores reais de x, que tornam a equação verdadeira. Esses valores são denominados raízes da equação.\n",TimeUnit.MILLISECONDS, temp_narrativa);
 
-        Escreva("Agora teste o seu conhecimento com um exemplo:\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Agora teste o seu conhecimento com um exemplo:\n\n",TimeUnit.MILLISECONDS, temp_narrativa);
 
         int tentativas2 = 0;
         int pontosTreino2 = 0;
@@ -432,11 +429,11 @@ public class PIJogoRPG {
         do {
             tentativas2 = tentativas2 + 1;
             Collections.shuffle(alternativas2);
-            System.out.println("Determine as raízes da equação 2x² - 3x - 5 = 0");
-            System.out.println("a) " + alternativas2.get(0));
-            System.out.println("b) " + alternativas2.get(1));
-            System.out.println("c) " + alternativas2.get(2));
-            System.out.println("d) " + alternativas2.get(3));
+            Escreva("Determine as raízes da equação 2x² - 3x - 5 = 0",TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("a) " + alternativas2.get(0),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("b) " + alternativas2.get(1),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("c) " + alternativas2.get(2),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("d) " + alternativas2.get(3),TimeUnit.MILLISECONDS, temp_narrativa);
 
             System.out.print("Escolha uma alternativa: ");
             String resposta = entrada.next();
@@ -446,41 +443,41 @@ public class PIJogoRPG {
                 case "a":
                 case "A":
                     if (alternativas2.get(0).equals("x = 5/2 e x = - 1")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou2 = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "b":
                 case "B":
                     if (alternativas2.get(1).equals("x = 5/2 e x = - 1")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou2 = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "c":
                 case "C":
                     if (alternativas2.get(2).equals("x = 5/2 e x = - 1")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou2 = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "d":
                 case "D":
                     if (alternativas2.get(3).equals("x = 5/2 e x = - 1")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou2 = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 default:
-                    System.out.println("Escolha inválida!");
+                    Escreva("Escolha inválida!",TimeUnit.MILLISECONDS, temp_narrativa);
 
 
             }
@@ -488,7 +485,7 @@ public class PIJogoRPG {
         } while (!acertou2);
         if (tentativas2 <= 1) {
             pontosTreino2 = 100;
-            System.out.println("Boa guereirro você acertou de primeira, você ganhou " + pontosTreino2 + "!");
+            Escreva("Boa guereirro você acertou de primeira, você ganhou " + pontosTreino2 + "!",TimeUnit.MILLISECONDS, temp_narrativa);
         } else if (tentativas2 > 1 && tentativas2 <= 3) {
             pontosTreino2 = 50;
         } else {
@@ -497,12 +494,12 @@ public class PIJogoRPG {
 
 
         pontos += pontosTreino2;
-        System.out.println("Parabéns, você concluiu o treino!!");
+        Escreva("Parabéns, você concluiu o treino!!",TimeUnit.MILLISECONDS, temp_narrativa);
         return pontos;
 
     }
 
-    public static int equacao1grau() {
+    public static int equacao1grau() throws Exception {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
         int tentativas = 0;
@@ -518,13 +515,13 @@ public class PIJogoRPG {
         do {
             tentativas = tentativas + 1;
             Collections.shuffle(alternativas);
-            System.out.println("Qual o valor de x: 3x+4=5x-8");
-            System.out.println("a) " + alternativas.get(0));
-            System.out.println("b) " + alternativas.get(1));
-            System.out.println("c) " + alternativas.get(2));
-            System.out.println("d) " + alternativas.get(3));
+            Escreva("Qual o valor de x: 3x+4=5x-8",TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("a) " + alternativas.get(0),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("b) " + alternativas.get(1),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("c) " + alternativas.get(2),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("d) " + alternativas.get(3),TimeUnit.MILLISECONDS, temp_narrativa);
 
-            System.out.print("Escolha uma alternativa: ");
+            Escreva("Escolha uma alternativa: ",TimeUnit.MILLISECONDS, temp_narrativa);
             String resposta = entrada.next();
 
 
@@ -532,41 +529,41 @@ public class PIJogoRPG {
                 case "a":
                 case "A":
                     if (alternativas.get(0).equals("6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "b":
                 case "B":
                     if (alternativas.get(1).equals("6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "c":
                 case "C":
                     if (alternativas.get(2).equals("6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "d":
                 case "D":
                     if (alternativas.get(3).equals("6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 default:
-                    System.out.println("Escolha inválida!");
+                    Escreva("Escolha inválida!",TimeUnit.MILLISECONDS, temp_narrativa);
 
 
             }
@@ -582,7 +579,7 @@ public class PIJogoRPG {
         return pontos;
     }
 
-    public static int equacao2grau() {
+    public static int equacao2grau() throws Exception {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
         int tentativas = 0;
@@ -598,11 +595,11 @@ public class PIJogoRPG {
         do {
             tentativas = tentativas + 1;
             Collections.shuffle(alternativas);
-            System.out.println("A soma das soluções da equação x² + 4x - 5 = 0 é igual a:");
-            System.out.println("a) " + alternativas.get(0));
-            System.out.println("b) " + alternativas.get(1));
-            System.out.println("c) " + alternativas.get(2));
-            System.out.println("d) " + alternativas.get(3));
+            Escreva("A soma das soluções da equação x² + 4x - 5 = 0 é igual a:",TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("a) " + alternativas.get(0),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("b) " + alternativas.get(1),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("c) " + alternativas.get(2),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("d) " + alternativas.get(3),TimeUnit.MILLISECONDS, temp_narrativa);
 
             System.out.print("Escolha uma alternativa: ");
             String resposta = entrada.next();
@@ -612,41 +609,41 @@ public class PIJogoRPG {
                 case "a":
                 case "A":
                     if (alternativas.get(0).equals("-4")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "b":
                 case "B":
                     if (alternativas.get(1).equals("-4")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "c":
                 case "C":
                     if (alternativas.get(2).equals("-4")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "d":
                 case "D":
                     if (alternativas.get(3).equals("-4")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 default:
-                    System.out.println("Escolha inválida!");
+                    Escreva("Escolha inválida!",TimeUnit.MILLISECONDS, temp_narrativa);
 
 
             }
@@ -665,10 +662,10 @@ public class PIJogoRPG {
 
     public static int treino3()throws Exception{
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Polinômios: ");
+        Escreva("Polinômios: ",TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("Um polinômio é uma expressão matemática formada por uma soma de termos, onde cada termo é composto por um número (chamado coeficiente) multiplicado por uma variável (geralmente x) elevada a uma potência não negativa (um número inteiro).\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Exemplo: \n(2x² + 3x + 1) + (x² - 2x + 4) = 3x² + x + 5\n\n", TimeUnit.MILLISECONDS, temp_dialog);
-        
+        Escreva("Exemplo: \n(2x² + 3x + 1) + (x² - 2x + 4) = 3x² + x + 5\n\n",TimeUnit.MILLISECONDS, temp_narrativa);
+
 
         Escreva("Agora teste o seu conhecimento com um exemplo:\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
 
@@ -687,11 +684,11 @@ public class PIJogoRPG {
         do {
             tentativas = tentativas + 1;
             Collections.shuffle(alternativas);
-            System.out.println("Resolva: (y² + 4y - 5) + (-3y² + 12y - 1):");
-            System.out.println("a) " + alternativas.get(0));
-            System.out.println("b) " + alternativas.get(1));
-            System.out.println("c) " + alternativas.get(2));
-            System.out.println("d) " + alternativas.get(3));
+            Escreva("Resolva: (y² + 4y - 5) + (-3y² + 12y - 1):",TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("a) " + alternativas.get(0),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("b) " + alternativas.get(1),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("c) " + alternativas.get(2),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("d) " + alternativas.get(3),TimeUnit.MILLISECONDS, temp_narrativa);
 
             System.out.print("Escolha uma alternativa: ");
             String resposta = entrada.next();
@@ -701,41 +698,41 @@ public class PIJogoRPG {
                 case "a":
                 case "A":
                     if (alternativas.get(0).equals("-2y² + 16y - 6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "b":
                 case "B":
                     if (alternativas.get(1).equals("-2y² + 16y - 6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "c":
                 case "C":
                     if (alternativas.get(2).equals("-2y² + 16y - 6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "d":
                 case "D":
                     if (alternativas.get(3).equals("-2y² + 16y - 6")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 default:
-                    System.out.println("Escolha inválida!");
+                    Escreva("Escolha inválida!",TimeUnit.MILLISECONDS, temp_narrativa);
 
 
             }
@@ -748,11 +745,11 @@ public class PIJogoRPG {
         } else {
             pontos = 20;
         }
-        System.out.println("Parabéns, você concluiu o treino!!");
+        Escreva("Parabéns, você concluiu o treino!!",TimeUnit.MILLISECONDS, temp_narrativa);
         return pontos;
     }
 
-    public static int polinomios1() {
+    public static int polinomios1() throws Exception{
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
         int tentativas = 0;
@@ -768,11 +765,11 @@ public class PIJogoRPG {
         do {
             tentativas = tentativas + 1;
             Collections.shuffle(alternativas);
-            System.out.println("Dados os polinômios p(x) = 2x³ + 3x² + 1 e q(x) = 3x² + 5x - 15, a soma p(-2) + q(2) é igual a:");
-            System.out.println("a) " + alternativas.get(0));
-            System.out.println("b) " + alternativas.get(1));
-            System.out.println("c) " + alternativas.get(2));
-            System.out.println("d) " + alternativas.get(3));
+            Escreva("Dados os polinômios p(x) = 2x³ + 3x² + 1 e q(x) = 3x² + 5x - 15, a soma p(-2) + q(2) é igual a:",TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("a) " + alternativas.get(0),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("b) " + alternativas.get(1),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("c) " + alternativas.get(2),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("d) " + alternativas.get(3),TimeUnit.MILLISECONDS, temp_narrativa);
 
             System.out.print("Escolha uma alternativa: ");
             String resposta = entrada.next();
@@ -782,41 +779,41 @@ public class PIJogoRPG {
                 case "a":
                 case "A":
                     if (alternativas.get(0).equals("4")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "b":
                 case "B":
                     if (alternativas.get(1).equals("4")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "c":
                 case "C":
                     if (alternativas.get(2).equals("4")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "d":
                 case "D":
                     if (alternativas.get(3).equals("4")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 default:
-                    System.out.println("Escolha inválida!");
+                    Escreva("Escolha inválida!",TimeUnit.MILLISECONDS, temp_narrativa);
 
 
             }
@@ -832,7 +829,7 @@ public class PIJogoRPG {
         return pontos;
     }
 
-    public static int polinomios2() {
+    public static int polinomios2() throws Exception {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
         int tentativas = 0;
@@ -848,11 +845,11 @@ public class PIJogoRPG {
         do {
             tentativas = tentativas + 1;
             Collections.shuffle(alternativas);
-            System.out.println("O triplo do polinômio 2x³ + 4x² -3x + 1 é:");
-            System.out.println("a) " + alternativas.get(0));
-            System.out.println("b) " + alternativas.get(1));
-            System.out.println("c) " + alternativas.get(2));
-            System.out.println("d) " + alternativas.get(3));
+            Escreva("O triplo do polinômio 2x³ + 4x² -3x + 1 é:",TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("a) " + alternativas.get(0),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("b) " + alternativas.get(1),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("c) " + alternativas.get(2),TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("d) " + alternativas.get(3),TimeUnit.MILLISECONDS, temp_narrativa);
 
             System.out.print("Escolha uma alternativa: ");
             String resposta = entrada.next();
@@ -862,41 +859,41 @@ public class PIJogoRPG {
                 case "a":
                 case "A":
                     if (alternativas.get(0).equals("6x³ + 12x² - 9x + 3")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "b":
                 case "B":
                     if (alternativas.get(1).equals("6x³ + 12x² - 9x + 3")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "c":
                 case "C":
                     if (alternativas.get(2).equals("6x³ + 12x² - 9x + 3")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 case "d":
                 case "D":
                     if (alternativas.get(3).equals("6x³ + 12x² - 9x + 3")) {
-                        System.out.println("Resposta correta!");
+                        Escreva("Resposta correta!",TimeUnit.MILLISECONDS, temp_narrativa);
                         acertou = true;
                     } else {
-                        System.out.println("Resposta incorreta!");
+                        Escreva("Resposta incorreta!",TimeUnit.MILLISECONDS, temp_narrativa);
                     }
                     break;
                 default:
-                    System.out.println("Escolha inválida!");
+                    Escreva("Escolha inválida!",TimeUnit.MILLISECONDS, temp_narrativa);
 
 
             }
@@ -1011,7 +1008,8 @@ public class PIJogoRPG {
 
         Escreva("Pai: seu avô me contava uma história mitologica quando eu era pequeno...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Pai: Há muito tempo, em um reino distante, existiam três jóias mágicas de fortalecimento\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Pai: Diziam as lendas que essas pedras eram presentes dos deuses, concedidas aos mortais como uma prova de sua confiança e habilidade para moldar o destino.\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Pai: Diziam as lendas que essas pedras eram presentes dos deuses, concedidas aos mortais como uma prova de sua " +
+                "confiança e habilidade para moldar o destino.\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Pai: Cada pedra fica protegida por um ancião, e para conquista-lá, é necessário derrotá-lo...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Pai: Eu tinha medo e por isso nunca quis procurar saber mais dessa história...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Pai: Venha, vou te ensinar a forjar uma espada!\n", TimeUnit.MILLISECONDS, temp_dialog);
@@ -1059,12 +1057,24 @@ public class PIJogoRPG {
 
         Escreva("\nPai: São questões que só enfrentando-o para conseguir tais respostas\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Pai: Isso é só o começo de uma jornada complicada e desafiadora!\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Pai: Eu quero que você venha me ajudar a confeccionar espadas..!!\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Pai: Eu quero que você venha me ajudar a confeccionar espadas..!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
 
-        Escreva("Escolha sua espada:\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("SUA ESPADA SERÁ UMA ALEATÓRIA:\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+        // Vetor para exibir as opções de espadas e obter a escolha aleatória
+        String[] espadas = {"Espada longa de aço", "Espada curta de ferro", "Katana Samurai", "Espada medieval"};
+
+        Random rand = new Random();
+
+        int indiceEspadaForjada = rand.nextInt(espadas.length);
+        String espadaForjada = espadas[indiceEspadaForjada];
+
+        // Retorna a espada escolhida com base no índice
+        Escreva("RECEBA A: " + espadaForjada+".", TimeUnit.MILLISECONDS, temp_narrativa);
+
         int escolha_3;
         do {
-            Escreva("Pai: Pois bem! Após a criação de sua espada quero que você vá atrás das jóias pela honra de nossa família!\n", TimeUnit.MILLISECONDS, temp_dialog);
+            Escreva("\n\nPai: Pois bem! Após a criação de sua espada quero que você vá atrás das jóias pela honra de nossa família!\n", TimeUnit.MILLISECONDS, temp_dialog);
             Escreva("1 - Mas parece muito perigoso...\n2 - Já nasci pronto!\n", TimeUnit.MILLISECONDS, temp_narrativa);
             escolha_3 = entrada.nextInt();
 
@@ -1136,15 +1146,29 @@ public class PIJogoRPG {
                         break;
                 }
             } else {
-                System.out.println("Entrada invalida, tente novamente!!");
+                Escreva("Entrada invalida, tente novamente!!",TimeUnit.MILLISECONDS, temp_narrativa);
             }
         } while (escolha_medo != 1 && escolha_medo != 2);
 
         Escreva("Viajante: Você será obrigado a derrotar Ragnar agora!!\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Necessário usar o seu pouco conhecimento em matématica para concluir a missão!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Derrote Ragnar agora!!!!!!!!!\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Acertando os cáculos de primeira, sua pontuação será a mais alta.\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("ACERTANDO OS CÁLCULOS DE PRIMEIRA, SUA PONTUAÇÃO SERÁ A MAIS ALTA E O ATAQUE TAMBÉM.\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("DESEJA FAZER UM TREINO ANTES?" , TimeUnit.MILLISECONDS, temp_narrativa);
+        int escolhaTreino1;
 
+        do {
+            Escreva("1 - Sim.\n2 - Não.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolhaTreino1 = entrada.nextInt();
+
+            switch (escolhaTreino1){
+                case 1:
+                    treino1();
+                    break;
+                case 2:
+                    Escreva("ENTÃO VAMOS DIRETO PARA O QUE INTERESSA!", TimeUnit.MILLISECONDS, temp_narrativa);
+            }
+        } while (escolhaTreino1 != 1 && escolhaTreino1 != 2);
         pontos += potencia1();
 
         Escreva("Viajante: Boa Ace!!!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
@@ -1163,7 +1187,7 @@ public class PIJogoRPG {
         Escreva("Viajante: Essa foi por pouco... aparentemente estava fácil...\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Creio que os próximos desafios ficarão mais difíceis\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Agora pegue a jóia da sabedoria, levaremos conosco...\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Viajante: Você vai precisar forjar essa pedra em sua espada, para que consiga derrotar o próximo ancião!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Você vai precisar forjar essa jóia em sua espada, para que consiga derrotar o próximo ancião!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
         int escolha;
         int contador = 1;
 
@@ -1223,7 +1247,7 @@ public class PIJogoRPG {
                     break;
 
                 case 2:
-                    Escreva("dwadawdawdawdawdawdawdawdawdaw", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva(" ", TimeUnit.MILLISECONDS, temp_narrativa);
                     break;
             }
         } while (escolha != 1 && escolha != 2);
@@ -1249,7 +1273,7 @@ public class PIJogoRPG {
                     break;
 
                 case 2:
-                    Escreva("dwadawdawdawdawdawdawdawdawdaw", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva(" ", TimeUnit.MILLISECONDS, temp_narrativa);
                     break;
             }
         } while (escolhaSeguir != 2);
@@ -1263,7 +1287,7 @@ public class PIJogoRPG {
         Escreva("Viajante: Esta jóia esta protegida no leste subterraneo\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Viajante: Será necessário muito empenho para percorrer este percurso\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("Ace: Utilizarei da minha sabedoria para chegar lá!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("***1° DIA DE 3***\n\n",TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***1° DIA DE 3***", null, escolhaSeguir);
         int escolhaCaminho;
 
         do {
@@ -1337,19 +1361,43 @@ public class PIJogoRPG {
                     Escreva("Ace: Mesmo com medo, vou em frente, sinto que é a escolha mais sábia!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
                     break;
             }
-        } while (escolhaCaminho != 1 && escolhaCaminho != 2);
+        } while (escolhaDescanso != 1 && escolhaDescanso != 2);
 
-        Escreva("***ANTES DE ACE TENTAR FAZER ALGO, OREX ENTRA RÁPIDAMENTE E O PEGA***", TimeUnit.MILLISECONDS, temp_narrativa);
-        Escreva("Ace: Viajante o que eu faço agora??? Me ajuda!!!!!", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("Viajante: Use sua sabedoria para lidar com este momento!!", TimeUnit.MILLISECONDS, temp_dialog);
-        Escreva("***ACE PENSA NO QUE FAZER***", TimeUnit.MILLISECONDS, temp_narrativa);
-        Escreva("Ace: Já sei!!!! utilizarei o ataque da equação!!", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ANTES DE ACE TENTAR FAZER ALGO, OREX ENTRA RÁPIDAMENTE E O PEGA***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Viajante o que eu faço agora??? Me ajuda!!!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Use sua sabedoria para lidar com este momento!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE PENSA NO QUE FAZER***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Já sei!!!! utilizarei o ataque da equação!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("DESEJA FAZER UM TREINO ANTES?\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
 
+        treino2();
         pontos += equacao1grau();
 
-        // mais historia
+        Escreva("Viajante: Bom ataque!!\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Porém ele permanece de pé...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***OREX AVANÇA COM FÚRIA PARA CIMA DO ACE FAZENDO A TERRA TREMER***\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("***ACE E OREX ENTRAM EM UM DUELO DE ATAQUES***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: O que eu faço viajante?? Me dê uma ideia!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***A BATALHA PROSSEGUIU, OREX NÃO DAVA SINAIS DE FRAQUEZA...***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Viajante: O sábio aqui é você, se concentre e use a espada da sabedoria!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Estou ficanndo cansado, não consigo derrotá-lo.\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Não vou desistir fácil, essa é pelo meu pai!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE COM UM GOLPE HABILIDOSO ATRAIU OREX PARA PERTO DE UM POÇO DEIXANDO-O SEM SAÍDA***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Diga suas últimas palavras!! Xeque-mate!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***GOLPE FINALIZADOR***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
 
         pontos += equacao2grau();
+
+        Escreva("Viajante: Sempre acreditei em você, assim como seu pai!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Agora vamos embora, pois aparentemente o Orex tem aliados...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Não irá querer enfrenta-los né?\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Obviamente não, esqueceu que agora eu sou um grande sábio com essa espada?\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Só preciso forjar mais essa nova jóia! *Risos\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Faço isso quando acharmos um lugar seguro!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE ENCONTRA UM LUGAR SEGURO...***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Não serei teimoso dessa vez, irei forjar a jóia em minha espada como meu pai ensinou!!!", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Aliás, que saudades pai! :(", TimeUnit.MILLISECONDS, temp_dialog);
+
 
         return pontos;
     }
@@ -1358,13 +1406,164 @@ public class PIJogoRPG {
         Scanner entrada = new Scanner(System.in);
         int pontos = 0;
 
-        // mais historia
+        Escreva("++== A JÓIA DA FORÇA ==+\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("***2 DIA DE 3***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Viajante: Nosso próximo destino será o lest\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Lá é um local de muitas neves e será nessário roupas quentes\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Você precisa achar algo para se agasalhar\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Já tenho uma ideia\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Caçarei animais para arrancar o couro e fazer um casaco\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE PASSA O DIA INTEIRO CAÇANDO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Tenho duas opçoes, um veado ou um urso\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Use sua sabedoria\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        int escolhaEsperta;
+
+        do {
+            Escreva("1 - Sábedoria (Veado).\n2 - Coragem (Urso).\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolhaEsperta = entrada.nextInt();
+
+            switch (escolhaEsperta) {
+                case 1:
+                    Escreva("Viajante: Essa é uma boa escolha, presa mais fácil!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Usarei da minha sabedoria para chegar mais próximo em silencio!\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Receba o poderoso ataque da minha espada!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("***COM APENAS UM GOLPE, O VEADO VAI A ÓBITO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("Ace: Além de sábio, parece que estou mais forte! *Risos\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Vamos! Leva o veado, precisamos ir para um local mais seguro\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    break;
+
+                case 2:
+                    Escreva("Viajante: Tem certeza? Está escolha não me parece sábia...\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Não faça as coisas por impulso ace...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Relaxa, minha coragem está a cima de qualquer medo!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("***ACE TENTA SE APROXIMAR DO URSO***\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("***URSO PERCEBE SUA PRESENÇA, FICA FURIOSO E PARTE PARA CIMA***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("Ace: Talvez não seria uma boa ideia mesmo Viajante!!!!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Agora você precisa usar sua sabedoria !!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("***ACE E URSO ENTRAM EM UMA BATALHA FRENÉTICA***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("Ace: Estou muito machucado e o urso não fica cansado...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Pensa Ace...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Usarei um ataque secreto!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    treino3();
+                    Escreva("***MESMO MUITO MACHUCADO, ACE FINALIZA O URSO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("Viajante: Boa Ace, estava na hora de usar sua sabedoria de verdade.\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Vamos! preciso me tratar, estou muito ferido...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Mas antes, tire o couro do Urso.\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    break;
+            }
+        } while (escolhaEsperta != 1 && escolhaEsperta != 2);
+
+        Escreva("***ACE TRATA O COURO E FAZ UM CASACO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("ACE: Depois de tudo que aconteceu, eu ainda não sei nada sobre a próxima jóia\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Vamos! No caminho eu conto, pois você já perdeu o 2 dia inteiro caçando animais...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Vamos o mais rápido possível, não tenho muito tempo!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***A CAMINHO DA NEVE NO LESTE***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Viajante: A terceira jóia... É a jóia da força.\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Possuí um brilho com um tom avermelhado radiante, irradiando uma energia poderosa.\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Aquele que a possuir, será agraciado com uma força sobre-humana,\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Capaz de mover montanhas e resistir aos mais terríveis perigos.\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Esta pedra é mantida pelo ancião Corvus, pelo nome já da para saber que é um corvo né?\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Ele jura proteger o Leste de qualquer ameça que se aproximar.\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Esse aparenta ser o ancião mais difícil até agora, como vou enfrentar alguém que voa?\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: O sábio aqui é você. *Risos\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Mas chegando lá, você terá uma surpresa!!\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Acho que falei demais... Estamos chegando já.\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***DIA 3 DE 3***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Estou ouvindo um barulho de passáro, o que será isso?\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Estamos chegando casa vez mais perto, fique preparado!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***CORVUS A TODO MOMENTO ESTA OBSERVANDO-OS***\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("***CORVUS PASSA VOANDO PERTO DE ACE E RASGA SEU ROSTO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        int escolhaAtaque;
+
+        do {
+            Escreva("1 - Jogar a espada no Corvus\n2 - Aguardar o melhor momento\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolhaEsperta = entrada.nextInt();
+
+            switch (escolhaEsperta) {
+                case 1:
+                    Escreva("***ACE ERRA A ESPADA***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("Viajante: Você não era o sábio?\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: Como pode fazer uma burrada dessa!\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Viajante: O que você vai fazer sem espada?!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Deixa comigo que o sábio sou eu!!\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("Viajante: Você é sábio só com a espada Ace!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Então o que me resta é correr atrás dela...\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("***ENQUANTO ACE CORRE ATRÁS DA ESPADA, CORVUS VÊ A OPORTUNIDADE DE FAZER SEUS ATAQUES VOADORES***\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("***ACE MESMO MACHUCADO, RECUPERA SUA ESPADA***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    break;
+
+                case 2:
+                    Escreva("\n", TimeUnit.MILLISECONDS, temp_dialog);
+
+            }
+        } while (escolhaEsperta != 1 && escolhaEsperta != 2);
+
+        Escreva("Ace: Agora estou esperto, me camuflarei debaixo da neve!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Talvez Corvus não seja tão besta assim Ace.\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Dessa vez  preciso que confie em mim, vou aguardar o melhor momento de ataque\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***CORVUS FICA SOBREVOANDO TODA A ÁREA SEM ACHAR ACE***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Isso, continue sobrevoando, quando estiver próximo, entrarei em ação!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***CORVUS PASSA PRÓXIMO A ACE***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Essa é minha hora de fazer a espada brilhar!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+
         pontos += polinomios1();
 
-        // mais historia
+        Escreva("***ACE JOGA SUA ESPADA E ACERTA EM CHEIO CORVUS, FAZENDO-O CAIR***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Viajante: Boa Ace!!! Nem eu espera por uma jogada ensaiada dessa.\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Vou atrás da jóia, antes que Corvus levante.\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Aqui é muito grande, preciso pensar em um lugar seja mais provável estar a jóia\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: No ninho do Corvus é a maior chance de encontrar.\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: Então já estou próximo\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***CORVUS PERCEBE QUE ACE ESTÁ PRÓXIMO DE PEGAR A JÓIA E VOA NOVAMENTE PARA ATACAR***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Você não irá conseguir me intervir Corvus, a minha coragem está acima de tudo!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***CORVUS COM SUAS GARRAS RASGA SEU CASACO E TAMBÉM A PELE DE ACE***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Não deveria ter feito isso!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
 
-        pontos += polinomios2();
+        do {
+            Escreva("1 - Jogar a espada no Corvus.\n2 - Tentar chegar até a jóia mesmo machucado.\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            escolhaEsperta = entrada.nextInt();
 
+            switch (escolhaEsperta) {
+                case 1:
+                    pontos += polinomios2();
+                    break;
+
+                case 2:
+                    Escreva("Ace: Preciso honrar meu pai, vou até o final!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("***CORVUS VÊ A BRAVURA DE ACE E CONTINUA O ATACANDO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("Viajante: Ace faça uma escolha sábia, derrote ele!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("Ace: Não tenho força mais, mas tentarei!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+
+                    pontos += polinomios2();
+                    Escreva("Viajante: Em cheio Ace!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("***CORVUS E ACE CAEM SEM VIDA, O FRIO FOI TÃO INTENSO QUE CONGELOU OS 2 INSTATÂNEO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    Escreva("Viajante: Ace!!!!!!!!! Nãooooooo!!!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+                    Escreva("***A ESPADA CAIU AO LADO DA JÓIA DA FORÇA E JUNTANDO AS 3 JÓIAS, HOUVE UMA EXPLOSÃO DESTRUINDO TUDO E TODOS!***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    creditos();
+                    menu();
+                    break;
+            }
+        } while (escolhaEsperta != 1 && escolhaEsperta != 2);
+
+        Escreva("***MESMO ACERTANDO EM CHEIO, CORVUS NÃO CAI***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Como assim??? ImpossÍvel!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: Ace, se escode!!\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Viajante: Essa foi a surpresa que eu disse!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ESPADA DE ACE CAI AO LADO DA JÓIA DA FORÇA***\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("***JUNTANDO AS 3, HOUVE UMA GRANDE EXPLOSÃO DESTRUINDO TUDO AO REDOR, INCLUSIVE CORVUS***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Como assim eu ainda estou vivo??\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Viajante: A espada está conectada diretamente a você, jamais ela te mataria!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("Ace: estou tão machucado, mas preciso encontrar com meu pai!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***FINAL DIA 3***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("***ACE CHEGA EM CASA E SE DEPARA COM SEU PAI EM ESTADO CRÍTICO.***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Pai, eu consegui, olha:\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE MOSTRA A ESPADA COM AS 3 JÓIAS FORJADAS EM SUA ESPADA***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Pai: Eu sempre acreditei que você conseguiria! Não há nada que o esforço não vença! Meu orgulho!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***PAI SUSPIRA E DESCANSA ETERNAMENTE***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        Escreva("Ace: Essa foi especialmente para você...Pai\n\n", TimeUnit.MILLISECONDS, temp_dialog);
+        Escreva("***ACE DESDE ENTÃO DESTRÓI MONSTROS POR TODO O MUNDO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
+        creditos();
+        menu();
         return pontos;
     }
 
@@ -1405,15 +1604,22 @@ public class PIJogoRPG {
         Escreva("++== Juan Batista ==++\n++== Allan Sampaio ==++\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
     }
 
-    
-
+    public static String escolherEspada(String[] espadas, int escolha) {
+        if (escolha >= 0 && escolha < espadas.length) {
+            return espadas[escolha];
+        }
+        throw new IllegalArgumentException("Escolha inválida");
+    }
 
 
     public static void main(String[] args) throws Exception {
         int pontosJogador;
         pontosJogador = menu();
-        System.out.println("Pontos do jogador: " + pontosJogador);
-       
+        jogo();
+        capitulo1();
+        capitulo2();
+        capitulo3();
+        Escreva("Pontos do jogador: " + pontosJogador, TimeUnit.MILLISECONDS, temp_narrativa);
     }
 }
 
