@@ -20,7 +20,7 @@ public class PIJogoRPG {
     }
 
     //Menu completo do jogo
-    static int menu() throws Exception {
+    static void menu() throws Exception {
         Scanner entrada = new Scanner(System.in);
         int escolha_opcao;
         int pontos = 0;
@@ -36,7 +36,10 @@ public class PIJogoRPG {
                 pontos += capitulo1();
                 pontos += capitulo2();
                 pontos += capitulo3();
-                return pontos;
+                Escreva("Viajante: Me diga seu nome jogador!\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                String nomeJogador = entrada.next();
+                Escreva("Parabéns " + nomeJogador + " sua pontuação foi: " + pontos, TimeUnit.MILLISECONDS, temp_narrativa);
+                
 
             } else if (escolha_opcao == 2) {
                 instrucoes();
@@ -53,7 +56,7 @@ public class PIJogoRPG {
 
         } while (escolha_opcao != 4);
 
-        return pontos;
+        
     }
 
     //Perguntas do jogo
@@ -1301,7 +1304,7 @@ public class PIJogoRPG {
 
         do {
             Escreva("DESEJA IR POR QUAL CAMINHO?", TimeUnit.MILLISECONDS, temp_narrativa);
-            Escreva("1 - Mais difícil.\n2 - Mais fácil.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            Escreva("\n1 - Mais difícil.\n2 - Mais fácil.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             escolhaCaminho = entrada.nextInt();
 
             switch (escolhaCaminho) {
@@ -1563,8 +1566,7 @@ public class PIJogoRPG {
                     Escreva("***CORVUS E ACE CAEM SEM VIDA, O FRIO FOI TÃO INTENSO QUE CONGELOU OS 2 INSTATÂNEO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
                     Escreva("Viajante: Ace!!!!!!!!! Nãooooooo!!!!!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
                     Escreva("***A ESPADA CAIU AO LADO DA JÓIA DA FORÇA E JUNTANDO AS 3 JÓIAS, HOUVE UMA EXPLOSÃO DESTRUINDO TUDO E TODOS!***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
-                    creditos();
-                    menu();
+                    
                     break;
             }
         } while (escolhaEsperta != 1 && escolhaEsperta != 2);
@@ -1586,13 +1588,11 @@ public class PIJogoRPG {
         Escreva("***PAI SUSPIRA E DESCANSA ETERNAMENTE***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("Ace: Essa foi especialmente para você...Pai!\n\n", TimeUnit.MILLISECONDS, temp_dialog);
         Escreva("***ACE DESDE ENTÃO DESTRÓI MONSTROS POR TODO O MUNDO***\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        creditos();
-        menu();
         return pontos;
     }
 
 
-    //Escreva("Viajante: Ace ", TimeUnit.MILLISECONDS, temp_dialog);
+    //Instruções do jogo
     static void instrucoes() throws Exception {
         Escreva("\n\n++== Introdução ao Jogo ==++\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("Bem-vindo ao Math Adventure, um mundo de coragem, sabedoria e força. Neste jogo RPG,\n", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -1637,12 +1637,7 @@ public class PIJogoRPG {
 
 
     public static void main(String[] args) throws Exception {
-        Scanner entrada = new Scanner(System.in);
-        int pontosJogador;
-        pontosJogador = menu();
-        Escreva("Viajante: Me diga seu nome jogador!\n", TimeUnit.MILLISECONDS, temp_narrativa);
-        String nomeJogador = entrada.nextLine();
-        Escreva("Parabéns " + nomeJogador + " sua pontuação foi: " + pontosJogador, TimeUnit.MILLISECONDS, temp_narrativa);
+        menu();
     }
 }
 
