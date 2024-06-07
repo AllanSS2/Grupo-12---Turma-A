@@ -9,9 +9,9 @@ public class PIJogoRPG {
 
 
     //ajuste a velocidade dos caracteres impressos
-    //static int temp_dialog = 60,  temp_narrativa = 20;
-    static int temp_dialog = 0, temp_narrativa = 0;
-
+    static int temp_dialog = 60,  temp_narrativa = 20;
+    
+    //Função para as mensagens serem digitadas devagar
     public static void Escreva(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
         for (char caractere : mensagem.toCharArray()) {
             System.out.print(caractere);
@@ -25,6 +25,7 @@ public class PIJogoRPG {
         int escolha_opcao;
         int pontos = 0;
 
+        //Um loop para o jogo continuar rodando até que a pessoa aperte para sair
         do {
             Escreva("\n++========================++", TimeUnit.MILLISECONDS, temp_narrativa);
             Escreva("\n....: Math Adventure :.... \n1 - Jogar\n2 - Instruções\n3 - Créditos\n4 - Sair\n", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -154,6 +155,7 @@ public class PIJogoRPG {
 
     }
 
+    //Primeiro desafio sobre potência
     public static int potencia1() throws Exception {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
@@ -238,6 +240,7 @@ public class PIJogoRPG {
         return pontos;
     }
 
+    //Segundo desafio sobre potência
     public static int potencia2() throws Exception {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
@@ -320,7 +323,7 @@ public class PIJogoRPG {
         return pontos;
     }
 
-
+    //treino sobre equações de 1 e 2 grau (easter egg)
     public static int treino2() throws Exception{
         Scanner entrada = new Scanner(System.in);
         Escreva("Equações de 1 grau: \n",TimeUnit.MILLISECONDS, temp_narrativa);
@@ -505,6 +508,7 @@ public class PIJogoRPG {
 
     }
 
+    //Desafio sobre equação de 1 grau
     public static int equacao1grau() throws Exception {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
@@ -586,6 +590,7 @@ public class PIJogoRPG {
         return pontos;
     }
 
+    //Desafio sobre equação de 2 grau
     public static int equacao2grau() throws Exception {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
@@ -667,7 +672,7 @@ public class PIJogoRPG {
         return pontos;
     }
 
-
+    //treino sobre Polinômios (easter egg)
     public static int treino3()throws Exception{
         Scanner entrada = new Scanner(System.in);
         Escreva("***ACERTE A QUESTÃO PARA EFETUAR O ATAQUE***\n\n",TimeUnit.MILLISECONDS, temp_narrativa);
@@ -757,6 +762,7 @@ public class PIJogoRPG {
         return pontos;
     }
 
+    //Primeiro desafio sobre polinômios
     public static int polinomios1() throws Exception{
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
@@ -838,6 +844,7 @@ public class PIJogoRPG {
         return pontos;
     }
 
+    //Primeiro desafio sobre polinômios
     public static int polinomios2() throws Exception {
         Scanner entrada = new Scanner(System.in);
         boolean acertou = false;
@@ -1623,6 +1630,7 @@ public class PIJogoRPG {
 
     }
 
+    //Função para os créditos do jogo
     static void creditos() throws Exception {
         Escreva("\n\n++== DESENVOLVEDORES ==++\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
         Escreva("++== Juan Batista ==++\n++== Allan Sampaio ==++\n\n", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -1636,6 +1644,7 @@ public class PIJogoRPG {
     }
 
 
+    //Main do jogo aonde chama a função do menu e dentro do menu é aonde tudo acontece
     public static void main(String[] args) throws Exception {
         menu();
     }
